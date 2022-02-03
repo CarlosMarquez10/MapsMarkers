@@ -45,13 +45,19 @@ body{
 	margin: .3em;
 	text-align: left;
 }
-
+.cont-markers{
+	margin:1em;
+}
+.container-markers .cont-markers{
+	resize: none;
+	padding-left: 13px;
+}
 
 
 /* Estilos del Panel del centro (mapa) */
 #map {
 	width: 100%;
-    height: 800px;
+    height: 600px;
 	border-radius: 7px;
 }
 /* Estilos del lateral derecho */
