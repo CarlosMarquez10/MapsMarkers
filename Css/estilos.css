@@ -1,0 +1,64 @@
+/* variables  */
+:root{
+  --ClrPrimary:rgb(20, 20, 20);
+  --ClrSecund:rgb(68, 67, 67);
+  --Clrfont: rgb(247, 240, 240);
+}
+body{
+	background-color:var(--ClrSecund);
+	font-family: 'Trocchi', serif;
+}
+
+/* Estilos del contenedor principal */
+
+.main{
+	
+	display: flex;
+	margin:1em;
+	
+}
+/* estilos del lateral Izquierdo */
+.side-left{
+	background-color: var(--ClrPrimary);
+	color: var(--Clrfont);
+	text-align: center;
+	width:25%;
+	border-radius: 7px;
+}
+.sidebar-brand{
+	
+	margin: .5em;   
+	display: flex;
+}
+.sidebar-brand a{
+	text-decoration: none;
+	color: var(--Clrfont);
+}
+
+.sidebar-brand img{
+    width: 30px;
+	margin: 0;
+	text-align: left;
+}
+.sidebar-brand figure{
+    width: 30px;
+	margin: .3em;
+	text-align: left;
+}
+
+
+
+/* Estilos del Panel del centro (mapa) */
+#map {
+	width: 100%;
+    height: 800px;
+	border-radius: 7px;
+}
+/* Estilos del lateral derecho */
+.side-right{
+	background-color: var(--ClrPrimary);
+	color: var(--Clrfont);
+	text-align: center;
+	width:25%;
+	border-radius: 7px;
+}
