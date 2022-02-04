@@ -3,6 +3,64 @@
   --ClrPrimary:rgb(20, 20, 20);
   --ClrSecund:rgb(68, 67, 67);
   --Clrfont: rgb(247, 240, 240);
+  --ClrOrchid: Orchid;
+  --clrMagenta: Magenta;
+  --clrMediumOrchid: MediumOrchid;
+  --clrMediumPurple: MediumPurple;
+  --clrRebeccaPurple: RebeccaPurple;
+  --clrBlueViolet: BlueViolet;
+  --clrDarkMagenta: DarkMagenta;
+  --clrIndigo: Indigo;
+  --clrSlateBlue: SlateBlue;
+  --clrIndianRed: IndianRed;
+  --clrSalmon: Salmon;
+  --clrCrimson: Crimson;
+  --clrred: red;
+  --clrDarkRed: DarkRed;
+  --clrLightPink: LightPink;
+  --clrDeepPink: DeepPink; 
+  --clrMediumVioletRed: MediumVioletRed;
+  --clrLightSalmon: LightSalmon;
+  --clrCoral:Coral;
+  --clrTomato:Tomato;
+  --clrOrangeRed:OrangeRed;
+  --clrDarkOrange:	DarkOrange;
+  --clrOrange:Orange;
+  --clrGold:Gold;
+  --clrYellow: Yellow;
+  --clrPeachPuff:PeachPuff;
+  --clrKhaki:Khaki;
+  --clrDarkKhaki:DarkKhaki;
+  --clrGreenYellow:GreenYellow;
+  --clrLawnGreen:LawnGreen;
+  --clrLimeGreen:LimeGreen;
+  --clrLightGreen:LightGreen;
+  --clrMediumSeaGreen:	MediumSeaGreen;
+  --clrForestGreen:ForestGreen;
+  --clrGreen:Green;
+  --clrYellowGreen:YellowGreen;
+  --clrMediumAquamarine:MediumAquamarine;
+  --clrLightSeaGreen:LightSeaGreen;
+  --clrTeal:Teal;
+  --clrAqua:Aqua;
+  --clrTurquoise:Turquoise;
+  --clrCadetBlue:CadetBlue;
+  --clrSteelBlue:SteelBlue;
+  --clrLightSkyBlue:LightSkyBlue;
+  --clrDodgerBlue:DodgerBlue;
+  --clrRoyalBlue:RoyalBlue;
+  --clrblue:blue;
+  --clrDarkBlue:DarkBlue;
+  --clrsilver: silver;
+  --clrDarkGray:DarkGray;
+  --clrGray:Gray;
+  --clrSlateGray:SlateGray;
+  --clrblack:black;
+
+
+  
+
+
 }
 body{
 	background-color:var(--ClrSecund);
@@ -23,28 +81,31 @@ body{
 	color: var(--Clrfont);
 	text-align: center;
 	width:25%;
-	border-radius: 7px;
+	border-top-left-radius: 8px;
+	border-bottom-left-radius: 8px;
 }
 .sidebar-brand{
-	
 	margin: .5em;   
-	display: flex;
+	/* display: flex; */
+	
 }
 .sidebar-brand a{
+	text-align: center;
 	text-decoration: none;
 	color: var(--Clrfont);
+	 border-bottom: 1px solid #ccc;
 }
 
-.sidebar-brand img{
+/* .sidebar-brand img{
     width: 30px;
 	margin: 0;
 	text-align: left;
-}
-.sidebar-brand figure{
+} */
+/* .sidebar-brand figure{
     width: 30px;
 	margin: .3em;
 	text-align: left;
-}
+} */
 .cont-markers{
 	margin:1em;
 }
@@ -58,7 +119,7 @@ body{
 #map {
 	width: 100%;
     height: 600px;
-	border-radius: 7px;
+	
 }
 /* Estilos del lateral derecho */
 .side-right{
@@ -66,5 +127,169 @@ body{
 	color: var(--Clrfont);
 	text-align: center;
 	width:25%;
-	border-radius: 7px;
+	border-top-right-radius: 8px;
+	border-bottom-right-radius: 8px;
+}
+
+.colores{
+	display: inline-block;
+	margin: 0px;
+	padding: 0px;
+	background-color: white;
+	width:195px;
+	height:82px;
+}
+
+.colores .color{
+	width:15px;
+	height:15px;
+	margin:0;
+	padding:0;	
+}
+
+.colorView{
+	background-color: var(--white);
+	margin:.3em;
+
+}
+.colorView .color{
+	width:40px;
+	height:40px;
+}
+
+/* aqui se lista los colores de la paleta  */
+/* primera fila */
+#color1{
+	background-color: var(--ClrOrchid);
+}
+#color2{
+	background-color: var(--clrMagenta);
+}
+#color3{
+	background-color: var(--clrMediumOrchid);
+}
+#color4{
+	background-color: var(--clrMediumPurple);
+}
+#color5{
+	background-color: var(--clrRebeccaPurple);
+}
+#color6{
+	background-color: var(--clrBlueViolet);
+}
+#color7{
+	background-color: var(--clrDarkMagenta);
+}
+#color8{
+	background-color: var(--clrIndigo);
+}
+#color9{
+	background-color: var(--clrSlateBlue);
+}
+#color10{
+	background-color: var(--clrIndianRed);
+}
+
+/* segunda fila */
+
+#color11{
+	background-color: var(--clrSalmon);
+}
+#color12{
+	background-color: var(--clrCrimson);
+}
+#color13{
+	background-color: var(--clrred);
+}
+#color14{
+	background-color: var(--clrDarkRed);
+}
+#color15{
+	background-color: var(--clrLightPink);
+}
+#color16{
+	background-color: var(--clrDeepPink);
+}
+#color17{
+	background-color: var(--clrMediumVioletRed);
+}
+#color18{
+	background-color: var(--clrLightSalmon);
+}
+#color19{
+	background-color: var(--clrCoral);
+}
+#color20{
+	background-color: var(--clrTomato);
+}
+
+/* tercera fila */
+
+#color21{
+	background-color: var(--clrOrangeRed);
+}
+#color22{
+	background-color: var(--clrDarkOrange);
+}
+#color23{
+	background-color: var(--clrOrange);
+}
+#color24{
+	background-color: var(--clrGold);
+}
+#color25{
+	background-color: var(--clrYellow);
+}
+#color26{
+	background-color: var(--clrPeachPuff);
+}
+#color27{
+	background-color: var(--clrKhaki);
+}
+#color28{
+	background-color: var(--clrDarkKhaki);
+}
+#color29{
+	background-color: var(--clrGreenYellow);
+}
+#color30{
+	background-color: var(--clrLawnGreen);
+}
+
+/* cuartra fila */
+
+#color31{
+	background-color: var(--clrLimeGreen);
+}
+#color32{
+	background-color: var(--clrLightGreen);
+}
+#color33{
+	background-color: var(--clrDarkGray);
+}
+#color34{
+	background-color: var(--clrForestGreen);
+}
+#color35{
+	background-color: var(--clrGreen);
+}
+#color36{
+	background-color: var(--clrYellowGreen);
+}
+#color37{
+	background-color: var(--clrMediumAquamarine);
+}
+#color38{
+	background-color: var(--clrSteelBlue);
+}
+#color39{
+	background-color: var(--clrLightSkyBlue);
+}
+#color40{
+	background-color: var(--clrDodgerBlue);
+}
+/* campo de la vista del color selccionado */
+
+#color41{
+    background-color: white;
 }

@@ -1,3 +1,5 @@
+let color = document.querySelector("#color");
+
 function iniciarMap() {
   const map = new google.maps.Map(document.getElementById("map"), {
     zoom: 7,
@@ -59,9 +61,20 @@ const beaches = [
 
 ];
 
-function setMarkers(map) {
+
+
+
+
+function setMarkers(map ,clrico) {
+
+  let clrIco = "red";
   
-   let clrIco = "red";
+  // color.addEventListener("click",()=>{
+  //   let colorico = "red";
+  //   clrIco = colorico;
+  //   console.log(clrIco);
+  // })
+
 
   const svgMarker = {
     path: d="M266.666,0C174.618,0,100,74.619,100,166.667c0,166.667,166.667,366.667,166.667,366.667s166.667-200,166.667-366.66C433.333,74.619,358.713,0,266.666,0z M266.666,266.667c-55.229,0-100-44.771-100-100c0-55.229,44.771-100,100-100c55.229,0,100,44.771,100,100C366.666,221.896,321.895,266.667,266.666,266.667z",
@@ -72,6 +85,7 @@ function setMarkers(map) {
     scale: .055,
     anchor: new google.maps.Point(15, 30),
   };
+  
 
 
   // const shape = {
@@ -101,8 +115,9 @@ function setMarkers(map) {
     infoWindow.close();
     infoWindow.setContent(marker.getTitle());
     infoWindow.open(marker.getMap(), marker);
+    
   });
-
+  
 
 });
 
