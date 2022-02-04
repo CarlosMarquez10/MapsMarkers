@@ -22,69 +22,82 @@
         <!-- <figure><img src="/img/icon_menu.png" alt="Imagen logo inmel"></figure> -->
         <a href="#">Maps Markers</a>
       </div>
+      <hr />
       <!-- contenedor de la busqueda individual -->
       <div class="container-Marker">
-        <input type="number" placeholder="buscar cliente">
+        <input class="input-consulta1" type="number" placeholder="buscar cliente">
+        <button class="btn-consulta1" type="button" id="btn_consulta1">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="white" class="bi bi-search"
+            viewBox="0 0 16 16">
+            <path
+              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+          </svg>
+        </button>
+        <hr />
       </div>
+
       <!-- contenedor de la busqueda maxiva -->
       <div class="container-markers">
-        <h6>Consulta Maxiva</h6>
+        <h4>Consulta Maxiva</h4>
         <textarea class="cont-markers" name="textarea" rows="10" cols="24" aria-label="With textarea"
           placeholder="Ingrese los Usuarios"></textarea>
         <button type="submit" class="btn-Markersmax">Consultar</button>
       </div>
+      <hr>
       <h5>latera va izquierdo</h5>
     </div>
     <!-- aqui empieza el lateral del centro -->
     <div id="map"></div>
 
-    <!-- aqui enpieza el lateral derechc -->
+    <!-- aqui enpieza el lateral derechco -->
     <div class="side-right">
       <h5>Lateral derecho</h5>
-      <div class="colores">
-        <img type="button" class="color" id="color1" />
-        <img type="button" class="color" id="color2" />
-        <img type="button" class="color" id="color3" />
-        <img type="button" class="color" id="color4" />
-        <img type="button" class="color" id="color5" />
-        <img type="button" class="color" id="color6" />
-        <img type="button" class="color" id="color7" />
-        <img type="button" class="color" id="color8" />
-        <img type="button" class="color" id="color9" />
-        <img type="button" class="color" id="color10" />
-        <img type="button" class="color" id="color11" />
-        <img type="button" class="color" id="color12" />
-        <img type="button" class="color" id="color13" />
-        <img type="button" class="color" id="color14" />
-        <img type="button" class="color" id="color15" />
-        <img type="button" class="color" id="color16" />
-        <img type="button" class="color" id="color17" />
-        <img type="button" class="color" id="color18" />
-        <img type="button" class="color" id="color19" />
-        <img type="button" class="color" id="color20" />
-        <img type="button" class="color" id="color21" />
-        <img type="button" class="color" id="color22" />
-        <img type="button" class="color" id="color23" />
-        <img type="button" class="color" id="color24" />
-        <img type="button" class="color" id="color25" />
-        <img type="button" class="color" id="color26" />
-        <img type="button" class="color" id="color27" />
-        <img type="button" class="color" id="color28" />
-        <img type="button" class="color" id="color29" />
-        <img type="button" class="color" id="color30" />
-        <img type="button" class="color" id="color31" />
-        <img type="button" class="color" id="color32" />
-        <img type="button" class="color" id="color33" />
-        <img type="button" class="color" id="color34" />
-        <img type="button" class="color" id="color35" />
-        <img type="button" class="color" id="color36" />
-        <img type="button" class="color" id="color37" />
-        <img type="button" class="color" id="color38" />
-        <img type="button" class="color" id="color39" />
-        <img type="button" class="color" id="color40" />
-      </div>
-      <div class="colorView">
-        <img type="button" class="color" id="color41" />
+      <div class="container-color">
+        <div class="colores">
+          <img type="button" class="color" id="color1" />
+          <img type="button" class="color" id="color2" />
+          <img type="button" class="color" id="color3" />
+          <img type="button" class="color" id="color4" />
+          <img type="button" class="color" id="color5" />
+          <img type="button" class="color" id="color6" />
+          <img type="button" class="color" id="color7" />
+          <img type="button" class="color" id="color8" />
+          <img type="button" class="color" id="color9" />
+          <img type="button" class="color" id="color10" />
+          <img type="button" class="color" id="color11" />
+          <img type="button" class="color" id="color12" />
+          <img type="button" class="color" id="color13" />
+          <img type="button" class="color" id="color14" />
+          <img type="button" class="color" id="color15" />
+          <img type="button" class="color" id="color16" />
+          <img type="button" class="color" id="color17" />
+          <img type="button" class="color" id="color18" />
+          <img type="button" class="color" id="color19" />
+          <img type="button" class="color" id="color20" />
+          <img type="button" class="color" id="color21" />
+          <img type="button" class="color" id="color22" />
+          <img type="button" class="color" id="color23" />
+          <img type="button" class="color" id="color24" />
+          <img type="button" class="color" id="color25" />
+          <img type="button" class="color" id="color26" />
+          <img type="button" class="color" id="color27" />
+          <img type="button" class="color" id="color28" />
+          <img type="button" class="color" id="color29" />
+          <img type="button" class="color" id="color30" />
+          <img type="button" class="color" id="color31" />
+          <img type="button" class="color" id="color32" />
+          <img type="button" class="color" id="color33" />
+          <img type="button" class="color" id="color34" />
+          <img type="button" class="color" id="color35" />
+          <img type="button" class="color" id="color36" />
+          <img type="button" class="color" id="color37" />
+          <img type="button" class="color" id="color38" />
+          <img type="button" class="color" id="color39" />
+          <img type="button" class="color" id="color40" />
+        </div>
+        <div class="colorView">
+          <img type="button" class="color" id="color41" />
+        </div>
       </div>
     </div>
   </div>
