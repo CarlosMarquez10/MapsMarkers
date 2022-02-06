@@ -163,6 +163,9 @@ body{
 	width:25%;
 	border-top-right-radius: 8px;
 	border-bottom-right-radius: 8px;
+	display: flex;
+	flex-flow: column wrap;
+	
 }
 
 .container-color{
@@ -341,4 +344,25 @@ body{
 
 #color41{
     background-color: white;
+}
+
+.tools{
+	display: flex;
+	color: black;
+	background-color: white;
+	width: 90%;
+	margin: 5px;
+	padding: 5px;
+	justify-content: space-evenly;
+	border-radius: 5px;
+
+	
+}
+
+.toolchildren{
+	border: 1px solid black;
+	background-color: rgb(53, 129, 228);
+    width:20%;
+	height:20px;
+
 }
