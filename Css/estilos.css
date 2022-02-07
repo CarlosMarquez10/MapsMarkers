@@ -157,10 +157,11 @@ body{
 
 
 /* Estilos del Panel del centro (mapa) */
-#map {
-	width: 100%;
+#map{
+
+    width: 100%;
     height: 600px;
-	
+
 }
 
 /* Estilos del lateral derecho */
@@ -361,7 +362,7 @@ body{
 #color40{
 	background-color: var(--clrDodgerBlue);
 }
-/* campo de la vista del color selccionado */
+/* campo de la vista del color selecionado */
 
 #color41{
     background-color: white;
@@ -386,5 +387,5 @@ body{
 	background-color: rgb(53, 129, 228);
     width:20%;
 	height:20px;
-
 }
+

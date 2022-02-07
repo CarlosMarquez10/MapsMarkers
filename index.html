@@ -5,10 +5,16 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="/Css/estilos.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Trocchi&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+  <link rel="stylesheet" href="/Css/estilos.css" />
   <title>Maps Markers</title>
 </head>
 
@@ -49,7 +55,7 @@
     <!-- aqui empieza el lateral del centro -->
     <div id="map"></div>
 
-    <!-- aqui enpieza el lateral derechco -->
+    <!-- aqui enpieza el lateral derecho -->
     <div class="side-right">
       <h5>Lateral derecho</h5>
       <div class="container-color">
@@ -101,16 +107,23 @@
       </div>
       <div class="tools">
         <button type="button" class="toolchildren" id="select">
+          <img class="img"src="/img/map-pointer_icon-icons.com_53949.svg" alt="">
+        </button>
         <button type="button" class="toolchildren" id="poligono">
-        <button type="button" class="toolchildren" id="puntos">
-        <button type="button" class="toolchildren" id="cuadroselect">
+          <button type="button" class="toolchildren" id="puntos">
+            <button type="button" class="toolchildren" id="cuadroselect">
       </div>
     </div>
   </div>
   <script src="/Js/ejerccios.js"></script>
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCg_SAmcZg_HohvuOBe1f5zIPWaUP25ryg&callback=iniciarMap">
-  </script>
+  <!-- jQuery CDN - Slim version (=without AJAX) -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-    
+  <!--ARCHIVOS PRA GENERAR EXCEL-->
+  <script src="https://unpkg.com/xlsx@0.17.1/dist/xlsx.full.min.js"></script>
+  <script src="https://unpkg.com/file-saverjs@latest/FileSaver.min.js"></script>
+  <script src="https://unpkg.com/tableexport@latest/dist/js/tableexport.min.js"></script>
+  <script type="text/javascript" src="js/funciones.js"></script>
+
 
 </html>
