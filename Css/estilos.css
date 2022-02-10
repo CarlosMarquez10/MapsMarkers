@@ -373,7 +373,7 @@ body{
 	flex-wrap: wrap;
 	color: black;
 	background-color: white;
-	width: 90%;
+	width: 94%;
 	margin: 2px;
 	padding: 2px;
 	justify-content: space-evenly;
@@ -383,9 +383,15 @@ body{
 }
 
 .toolchildren{
-	border: 1px solid black;
+	border:none;
+	border-radius: 5px;
 	background-color: rgb(53, 129, 228);
-    width:20%;
-	height:20px;
+    width:15%;
+	height:17px;
+}
+
+.tools .img{
+
+   text-align: center;
 }
 
