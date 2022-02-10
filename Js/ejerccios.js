@@ -1,6 +1,6 @@
 let map = L.map('map').setView([7.944311, -72.490174], 13);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
-var iconoDefecto = L.icon({iconUrl: "img/avatar.png",
+var iconoDefecto = L.icon({iconUrl: "img/icored.svg",
 iconSize: [30, 40],
 
 });
