@@ -3,60 +3,22 @@
   --ClrPrimary:rgb(20, 20, 20);
   --ClrSecund:rgb(68, 67, 67);
   --Clrfont: rgb(247, 240, 240);
-  --ClrOrchid: Orchid;
+
+  --clrblue:blue;
   --clrMagenta: Magenta;
-  --clrMediumOrchid: MediumOrchid;
-  --clrMediumPurple: MediumPurple;
-  --clrRebeccaPurple: RebeccaPurple;
-  --clrBlueViolet: BlueViolet;
-  --clrDarkMagenta: DarkMagenta;
-  --clrIndigo: Indigo;
-  --clrSlateBlue: SlateBlue;
-  --clrIndianRed: IndianRed;
-  --clrSalmon: Salmon;
-  --clrCrimson: Crimson;
-  --clrred: red;
-  --clrDarkRed: DarkRed;
-  --clrLightPink: LightPink;
-  --clrDeepPink: DeepPink; 
-  --clrMediumVioletRed: MediumVioletRed;
-  --clrLightSalmon: LightSalmon;
-  --clrCoral:Coral;
-  --clrTomato:Tomato;
-  --clrOrangeRed:OrangeRed;
-  --clrDarkOrange:	DarkOrange;
-  --clrOrange:Orange;
-  --clrGold:Gold;
-  --clrYellow: Yellow;
-  --clrPeachPuff:PeachPuff;
-  --clrKhaki:Khaki;
-  --clrDarkKhaki:DarkKhaki;
-  --clrGreenYellow:GreenYellow;
-  --clrLawnGreen:LawnGreen;
-  --clrLimeGreen:LimeGreen;
-  --clrLightGreen:LightGreen;
-  --clrMediumSeaGreen:	MediumSeaGreen;
-  --clrForestGreen:ForestGreen;
   --clrGreen:Green;
   --clrYellowGreen:YellowGreen;
-  --clrMediumAquamarine:MediumAquamarine;
-  --clrLightSeaGreen:LightSeaGreen;
-  --clrTeal:Teal;
-  --clrAqua:Aqua;
-  --clrTurquoise:Turquoise;
-  --clrCadetBlue:CadetBlue;
-  --clrSteelBlue:SteelBlue;
-  --clrLightSkyBlue:LightSkyBlue;
-  --clrDodgerBlue:DodgerBlue;
-  --clrRoyalBlue:RoyalBlue;
-  --clrblue:blue;
-  --clrDarkBlue:DarkBlue;
-  --clrsilver: silver;
-  --clrDarkGray:DarkGray;
+  --clrLightSalmon: LightSalmon;
   --clrGray:Gray;
-  --clrSlateGray:SlateGray;
+  --clrLightSkyBlue:LightSkyBlue;
+  --clrOrange:Orange;
+  --clrOrangeRed:OrangeRed;
+  --clrred: red;
+  --clrPruple: purple;
+  --clryellow: yellow;
   --clrblack:black;
-
+  --clrWhite:rgb(228, 222, 222);
+ --clrWhite: white;
 
   
 
@@ -209,8 +171,8 @@ body{
 }
 
 .colores .color{
-	width:11px;
-	height:11px;
+	width:20px;
+	height:20px;
 	margin:2px;
 	padding:0;
 
@@ -225,143 +187,54 @@ body{
 
 
 }
-.colorView .color{
-	/* width:40px; */
-	/* height:40px; */
-	/* margin-top: 20px; */
-}
+
 
 /* aqui se lista los colores de la paleta  */
 /* primera fila */
 #color1{
-	background-color: var(--ClrOrchid);
+	background-color: var(--clrblue);
 }
 #color2{
 	background-color: var(--clrMagenta);
 }
 #color3{
-	background-color: var(--clrMediumOrchid);
-}
-#color4{
-	background-color: var(--clrMediumPurple);
-}
-#color5{
-	background-color: var(--clrRebeccaPurple);
-}
-#color6{
-	background-color: var(--clrBlueViolet);
-}
-#color7{
-	background-color: var(--clrDarkMagenta);
-}
-#color8{
-	background-color: var(--clrIndigo);
-}
-#color9{
-	background-color: var(--clrSlateBlue);
-}
-#color10{
-	background-color: var(--clrIndianRed);
-}
-
-/* segunda fila */
-
-#color11{
-	background-color: var(--clrSalmon);
-}
-#color12{
-	background-color: var(--clrCrimson);
-}
-#color13{
-	background-color: var(--clrred);
-}
-#color14{
-	background-color: var(--clrDarkRed);
-}
-#color15{
-	background-color: var(--clrLightPink);
-}
-#color16{
-	background-color: var(--clrDeepPink);
-}
-#color17{
-	background-color: var(--clrMediumVioletRed);
-}
-#color18{
-	background-color: var(--clrLightSalmon);
-}
-#color19{
-	background-color: var(--clrCoral);
-}
-#color20{
-	background-color: var(--clrTomato);
-}
-
-/* tercera fila */
-
-#color21{
-	background-color: var(--clrOrangeRed);
-}
-#color22{
-	background-color: var(--clrDarkOrange);
-}
-#color23{
-	background-color: var(--clrOrange);
-}
-#color24{
-	background-color: var(--clrGold);
-}
-#color25{
-	background-color: var(--clrYellow);
-}
-#color26{
-	background-color: var(--clrPeachPuff);
-}
-#color27{
-	background-color: var(--clrKhaki);
-}
-#color28{
-	background-color: var(--clrDarkKhaki);
-}
-#color29{
-	background-color: var(--clrGreenYellow);
-}
-#color30{
-	background-color: var(--clrLawnGreen);
-}
-
-/* cuartra fila */
-
-#color31{
-	background-color: var(--clrLimeGreen);
-}
-#color32{
-	background-color: var(--clrLightGreen);
-}
-#color33{
-	background-color: var(--clrDarkGray);
-}
-#color34{
-	background-color: var(--clrForestGreen);
-}
-#color35{
 	background-color: var(--clrGreen);
 }
-#color36{
+#color5{
 	background-color: var(--clrYellowGreen);
 }
-#color37{
-	background-color: var(--clrMediumAquamarine);
+#color6{
+	background-color: var(--clrLightSalmon);
 }
-#color38{
-	background-color: var(--clrSteelBlue);
+#color7{
+	background-color: var(--clrGray);
 }
-#color39{
+#color8{
 	background-color: var(--clrLightSkyBlue);
 }
-#color40{
-	background-color: var(--clrDodgerBlue);
+#color9{
+	background-color: var(--clrOrange);
 }
+#color10{
+	background-color: var(--clrred);
+}
+
+#color11{
+	background-color: var(--clrPruple);
+}
+#color12{
+	background-color: var(--clryellow);
+}
+#color13{
+	background-color: var(--clrblack);
+}
+#color14{
+	background-color: var(--clrOrangeRed);
+}
+#color15{
+	background-color: var(--clrWhite);
+}
+
 /* campo de la vista del color selecionado */
 
 #color41{
