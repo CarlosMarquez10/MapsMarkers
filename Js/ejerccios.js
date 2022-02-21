@@ -17,24 +17,30 @@ const color12 = document.querySelector("#color12");
 const color13 = document.querySelector("#color13");
 const color14 = document.querySelector("#color14");
 const color15 = document.querySelector("#color15");
+var textoMasivo = document.querySelector("#btnMasivo");
 const btnBuscar = document.querySelector("#btn_consulta1");
-var iconoBlue = L.icon({ 
-  iconUrl: "img/icoblue.svg", 
-  iconSize: [30, 40] 
+document.getElementById('file').addEventListener('change', readFile, false);
+var datosTextArea = new Array();
+
+
+var iconoBlue = L.icon({
+  iconUrl: "img/icoblue.svg",
+  iconSize: [30, 40]
 });
 
-var iconogreen = L.icon({ 
+var iconogreen = L.icon({
   iconUrl: "img/icogreen.svg",
-  iconSize: [30, 40] 
+  iconSize: [30, 40]
 });
 
 var iconoGrenYellow = L.icon({
   iconUrl: "img/icoGreenYellow.svg",
   iconSize: [30, 40],
 });
-var iconogrey = L.icon({ 
-  iconUrl: "img/icogrey.svg", 
-  iconSize: [30, 40] });
+var iconogrey = L.icon({
+  iconUrl: "img/icogrey.svg",
+  iconSize: [30, 40]
+});
 
 var iconLightSalmon = L.icon({
   iconUrl: "img/icoLightSalmon.svg",
@@ -51,9 +57,9 @@ var iconomagenta = L.icon({
   iconSize: [30, 40],
 });
 
-var iconoorange = L.icon({ 
-  iconUrl: "img/icoorange.svg", 
-  iconSize: [30, 40] 
+var iconoorange = L.icon({
+  iconUrl: "img/icoorange.svg",
+  iconSize: [30, 40]
 });
 
 var iconoOrangeRed = L.icon({
@@ -66,32 +72,33 @@ var iconoLightSkyBlue = L.icon({
   iconSize: [30, 40],
 });
 
-var iconopurple = L.icon({ 
-  iconUrl: "img/icopurple.svg", 
-  iconSize: [30, 40] });
-
-var iconoRed = L.icon({ 
-  iconUrl: "img/icored.svg", 
-  iconSize: [30, 40] 
+var iconopurple = L.icon({
+  iconUrl: "img/icopurple.svg",
+  iconSize: [30, 40]
 });
 
-var iconoYellow = L.icon({ 
-  iconUrl: "img/icoyellow.svg", 
-  iconSize: [30, 40] 
+var iconoRed = L.icon({
+  iconUrl: "img/icored.svg",
+  iconSize: [30, 40]
 });
 
-var iconoBlack = L.icon({ 
-  iconUrl: "img/icoblack.svg", 
-  iconSize: [30, 40] 
+var iconoYellow = L.icon({
+  iconUrl: "img/icoyellow.svg",
+  iconSize: [30, 40]
 });
 
-var iconoWhite = L.icon({ 
-  iconUrl: "img/icowhite.svg", 
-  iconSize: [30, 40] 
+var iconoBlack = L.icon({
+  iconUrl: "img/icoblack.svg",
+  iconSize: [30, 40]
+});
+
+var iconoWhite = L.icon({
+  iconUrl: "img/icowhite.svg",
+  iconSize: [30, 40]
 });
 
 var iconox = "";
-    // a qui empieza la asignacion del codigo para el cuadro de color.
+// a qui empieza la asignacion del codigo para el cuadro de color.
 
 color1.addEventListener("click", () => {
   colorview.id = "color1";
@@ -181,24 +188,89 @@ var colorico = iconoBlue; // variable para guardar el color.
 
 // cambiar el color de los puntos
 
-function cambiarColor(color){
-   this.colorico = color;
+function cambiarColor(color) {
+  this.colorico = color;
 };
 
 // proceso para buscar ubicacion individual
 
-btnBuscar.addEventListener('click',()=>{
+btnBuscar.addEventListener('click', () => {
 
   var latitud = document.getElementById("lat").value;
   var longitud = document.getElementById("long").value;
 
-  function Puntos(lat,long){
+  function Puntos(lat, long) {
     this.lat = lat;
     this.long = long;
- }
- var damepuntos = new Puntos(latitud,longitud);
- console.log(damepuntos.lat);
- L.marker([damepuntos.lat, damepuntos.long], { icon: colorico })
-  .addTo(map);
+  }
+  var damepuntos = new Puntos(latitud, longitud);
+  console.log(damepuntos.lat);
+  var puntox = L.marker([damepuntos.lat, damepuntos.long], { icon: colorico })
+    .addTo(map);
+  puntox.on('click', cambiarico);
+
+  function cambiarico() {
+    // map.removeLayer(this);
+    puntox.setIcon(colorico);
+  };
+
+});
+
+
+
+// Codigo para leer archivo excel
+
+function parseCSV(text) {
+  // Obtenemos las lineas del texto
+  let lines = text.replace(/\r/g, '').split('\n');
+  return lines.map(line => {
+    // Por cada linea obtenemos los valores
+    let values = line.split(',');
+    return values;
+  });
+}
+
+function reverseMatrix(matrix){
+  let output = [];
+  // Por cada fila
+  matrix.forEach((values, row) => {
+    // Vemos los valores y su posicion
+    values.forEach((value, col) => {
+      // Si la posición aún no fue creada
+      if (output[col] === undefined) output[col] = [];
+      output[col][row] = value;
+    });
+  });
+  return output;
+}
+
+function readFile(evt) {
+  let file = evt.target.files[0];
+  let reader = new FileReader();
+  reader.onload = (e) => {
+    // Cuando el archivo se terminó de cargar
+    let lines = parseCSV(e.target.result);
+    let output = reverseMatrix(lines);
+    console.log(output);
+  };
+  // Leemos el contenido del archivo seleccionado
+  reader.readAsBinaryString(file);
+}
+
+btnMasivo.addEventListener('click', () => {
+  
+   var datos = this.output;
+
+   console.log(datos);
+
+  var puntox = L.marker([datos[0], datos[1]], { icon: colorico })
+    .addTo(map);
+  puntox.on('click', cambiarico);
+
+  function cambiarico() {
+    // map.removeLayer(this);
+    puntox.setIcon(colorico);
+  };
+
 });
 
