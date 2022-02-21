@@ -18,7 +18,7 @@
   --clryellow: yellow;
   --clrblack:black;
   --clrWhite:rgb(228, 222, 222);
- --clrWhite: white;
+ --clrWhite1: white;
 
   
 
@@ -76,9 +76,10 @@ body{
 }
 .input-consulta1{
 	width:80%;
-	height:32%;
+	height:28%;
 	margin-right:0;
 	padding-right: 0;
+	border-radius: 5px;
 }
 .btn-consulta1{
 	background-color: rgb(53, 129, 228);
@@ -116,6 +117,17 @@ body{
 	color: white;
 	font-size: 1.2em;
 }
+
+.btn-Markersmax1{
+	width:75%;
+	height: 24%;
+	margin: .3em;
+	border-radius: 5px;
+	background-color: rgb(53, 129, 228);
+	color: white;
+	font-size: 1.2em;
+}
+
 
 
 /* Estilos del Panel del centro (mapa) */
