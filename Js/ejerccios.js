@@ -230,8 +230,12 @@ function parseCSV(text) {
   });
 }
 
-function reverseMatrix(matrix){
-  let output = [];
+// var output = new array();
+// var lat = new array();
+// var long = new array();
+
+function reverseMatrix(matrix) {
+  var output = [];
   // Por cada fila
   matrix.forEach((values, row) => {
     // Vemos los valores y su posicion
@@ -245,32 +249,53 @@ function reverseMatrix(matrix){
 }
 
 function readFile(evt) {
+  var output = [];
+
   let file = evt.target.files[0];
   let reader = new FileReader();
   reader.onload = (e) => {
     // Cuando el archivo se terminó de cargar
     let lines = parseCSV(e.target.result);
-    let output = reverseMatrix(lines);
+    output = reverseMatrix(lines);
     console.log(output);
+    pasardato(output);
   };
+
+
   // Leemos el contenido del archivo seleccionado
   reader.readAsBinaryString(file);
+
+
+};
+
+function pasardato(dato) {
+
+  var output = new Array();
+  output = dato;
+  var puntos = new Array();
+ 
+  btnMasivo.addEventListener('click', () => {
+    for (var i = 0; i < output.length; i++) {
+      // var latitud = output[i].split(";")[0];
+      // var longitud = output[i].split(";")[1];
+     
+   
+      var data = puntos.join();
+      puntos.push(data.split(';'));
+      
+
+      // var puntox = L.marker([latitud[i], longitud[i]], { icon: colorico })
+      //   .addTo(map);
+      // puntox.on('click', cambiarico);
+
+      // function cambiarico() {
+      //   // map.removeLayer(this);
+      //   puntox.setIcon(colorico);
+      // };
+    }
+
+    console.log(puntos)
+  }
+  );
 }
-
-btnMasivo.addEventListener('click', () => {
-  
-   var datos = this.output;
-
-   console.log(datos);
-
-  var puntox = L.marker([datos[0], datos[1]], { icon: colorico })
-    .addTo(map);
-  puntox.on('click', cambiarico);
-
-  function cambiarico() {
-    // map.removeLayer(this);
-    puntox.setIcon(colorico);
-  };
-
-});
 
