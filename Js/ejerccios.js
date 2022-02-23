@@ -188,9 +188,6 @@ var colorico = iconoBlue; // variable para guardar el color.
 
 // cambiar el color de los puntos
 
-function cambiarColor(color) {
-  this.colorico = color;
-};
 
 // proceso para buscar ubicacion individual
 
@@ -199,9 +196,11 @@ btnBuscar.addEventListener('click', () => {
   var latitud = document.getElementById("lat").value;
   var longitud = document.getElementById("long").value;
 
-  function Puntos(lat, long) {
-    this.lat = lat;
-    this.long = long;
+  class Puntos {
+    constructor(lat, long) {
+      this.lat = lat;
+      this.long = long;
+    }
   }
   var damepuntos = new Puntos(latitud, longitud);
   console.log(damepuntos.lat);
@@ -217,6 +216,12 @@ btnBuscar.addEventListener('click', () => {
 });
 
 
+class cambiarColor {
+  constructor(color) {
+    this.colorico = color;
+  }
+};
+
 
 // Codigo para leer archivo excel
 
@@ -225,14 +230,10 @@ function parseCSV(text) {
   let lines = text.replace(/\r/g, '').split('\n');
   return lines.map(line => {
     // Por cada linea obtenemos los valores
-    let values = line.split(',');
+    let values = line.split(';');
     return values;
   });
 }
-
-// var output = new array();
-// var lat = new array();
-// var long = new array();
 
 function reverseMatrix(matrix) {
   var output = [];
@@ -272,29 +273,27 @@ function pasardato(dato) {
 
   var output = new Array();
   output = dato;
-  var puntos = new Array();
- 
+
   btnMasivo.addEventListener('click', () => {
-    for (var i = 0; i < output.length; i++) {
-      // var latitud = output[i].split(";")[0];
-      // var longitud = output[i].split(";")[1];
-     
-   
-      var data = puntos.join();
-      puntos.push(data.split(';'));
-      
-
-      // var puntox = L.marker([latitud[i], longitud[i]], { icon: colorico })
-      //   .addTo(map);
-      // puntox.on('click', cambiarico);
-
-      // function cambiarico() {
-      //   // map.removeLayer(this);
-      //   puntox.setIcon(colorico);
-      // };
+    for (var i = 1; i < output.length; i++) {
+      var latitud = output[0];
+      var longitud = output[1];
     }
+    for (var j = 0; j < latitud.length; j++) {
+      var lat = latitud[j];
+      var long = longitud[j];
+      var puntox = L.marker([lat,long], { icon: colorico })
+       .addTo(map)
+       .bindPopup(`${latitud[j]}, ${longitud[j]}`)
+       puntox.on('click', cambiarico);
 
-    console.log(puntos)
+      function cambiarico() {
+        puntox.setIcon(colorico);
+        // map.removeLayer(this);
+    
+      };
+
+    }
   }
   );
 }
