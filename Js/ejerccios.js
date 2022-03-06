@@ -300,7 +300,7 @@ function pintar(lati, longi){
     .addTo(map);
 
 
-  puntox.on('click', cambiarico);
+  puntox.on('click', cambiarico)
 
   function cambiarico() {
     // map.removeLayer(this);
