@@ -216,10 +216,8 @@ btnBuscar.addEventListener('click', () => {
 });
 
 
-class cambiarColor {
-  constructor(color) {
-    this.colorico = color;
-  }
+function cambiarColor(color) {
+    colorico = color;
 };
 
 
@@ -282,19 +280,31 @@ function pasardato(dato) {
     for (var j = 0; j < latitud.length; j++) {
       var lat = latitud[j];
       var long = longitud[j];
-      var puntox = L.marker([lat,long], { icon: colorico })
-       .addTo(map)
-       .bindPopup(`${latitud[j]}, ${longitud[j]}`)
-       puntox.on('click', cambiarico);
-
-      function cambiarico() {
-        puntox.setIcon(colorico);
-        // map.removeLayer(this);
-    
-      };
+      pintar(lat, long);
 
     }
   }
   );
 }
 
+function pintar(lati, longi){
+
+  class Puntos {
+    constructor(latit, longit) {
+      this.lati = latit;
+      this.longi = longit;
+    }
+  }
+  var damepuntos = new Puntos(lati, longi);
+  var puntox = L.marker([damepuntos.lati, damepuntos.longi], { icon: colorico })
+    .addTo(map);
+
+
+  puntox.on('click', cambiarico);
+
+  function cambiarico() {
+    // map.removeLayer(this);
+    puntox.setIcon(colorico);
+  };
+
+}
