@@ -342,25 +342,19 @@ function pintar(lati, longi, Nom, Dir, d1, d2) {
     datosguardar.nombre = damepuntos.Nombre;
     datosguardar.Direccion = damepuntos.Direcciones;
     datosguardar.coloricono = nombreColor;
-    console.log(datosguardar);
-
+    pasarpunto(datosguardar);
   };
-  // guardardato(datosguardar);
+
 }
 
+function pasarpunto(puntos){
+  var mispuntos = new Array();
+  mispuntos.push(puntos);
+  return console.log(mispuntos);
+};
 
-// function guardardato(misdatos){
-
-//   var dato = misdatos;
- 
-
-//   btnmostrar.addEventListener('click', (dato) =>{
-   
-//     console.log(dato);
-
-//   });
-
-
-// };
+btnmostrar.addEventListener('click', () => {
+     console.log(pasardato());
+});
 
 
