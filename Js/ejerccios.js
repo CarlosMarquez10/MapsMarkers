@@ -17,10 +17,26 @@ const color12 = document.querySelector("#color12");
 const color13 = document.querySelector("#color13");
 const color14 = document.querySelector("#color14");
 const color15 = document.querySelector("#color15");
-var textoMasivo = document.querySelector("#btnMasivo");
+var btnMasivo = document.querySelector("#btnMasivo");
 const btnBuscar = document.querySelector("#btn_consulta1");
 const btnmostrar = document.querySelector("#select");
 document.getElementById('file').addEventListener('change', readFile, false);
+const datofijo1 = document.getElementById('datofijo1').value;
+const datofijo2 = document.getElementById('datofijo2').value;
+const lati = document.getElementById('lati').value;
+const longt = document.getElementById('longt').value;
+const Nombre = document.querySelector('#nombre');
+const Dirrecion = document.getElementById('dirrecion').value;
+const Description = document.getElementById('description').value;
+const dato1 = document.getElementById('dato1').value;
+const dato2 = document.getElementById('dato2').value;
+const dato3 = document.getElementById('dato3').value;
+const dato4 = document.getElementById('dato4').value;
+const dato5 = document.getElementById('dato5').value;
+const btn_editar = document.querySelector('#btn_editar');
+const btnguardar = document.querySelector('#btnguardar');
+
+
 var datosTextArea = new Array();
 
 
@@ -193,7 +209,7 @@ color14.addEventListener("click", () => {
 });
 
 color15.addEventListener("click", () => {
-   var nomcolor = "Blanco";
+  var nomcolor = "Blanco";
   colorview.id = "color15";
   iconox = iconoWhite;
   cambiarColor(iconox, nomcolor);
@@ -331,30 +347,38 @@ function pintar(lati, longi, Nom, Dir, d1, d2) {
     .bindPopup(`Orden: ${damepuntos.dato2} <br> Ciclo: ${damepuntos.dato1} <br> Nombre: ${damepuntos.Nombre}`);
 
   // .openPopup();
-  
+
   puntox.on('click', cambiarico);
 
   function cambiarico() {
     // map.removeLayer(this);
     puntox.setIcon(colorico);
-   
+
     var datosguardar = new Object();
     datosguardar.nombre = damepuntos.Nombre;
     datosguardar.Direccion = damepuntos.Direcciones;
     datosguardar.coloricono = nombreColor;
+
     pasarpunto(datosguardar);
   };
 
 }
 
-function pasarpunto(puntos){
-  var mispuntos = new Array();
+var mispuntos = new Array();
+
+function pasarpunto(puntos) {
+  console.log(puntos);
   mispuntos.push(puntos);
-  return console.log(mispuntos);
+  // return console.log(mispuntos);
 };
 
 btnmostrar.addEventListener('click', () => {
-     console.log(pasardato());
+  mostrardatos();
+  console.log(mispuntos);
 });
 
+function mostrardatos(){
+   Nombre.innerText = mispuntos.nombre;
+   console.log(Nombre.value);
+};
 

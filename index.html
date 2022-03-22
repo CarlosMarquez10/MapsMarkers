@@ -15,7 +15,7 @@
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
     integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
     crossorigin=""></script>
- 
+
   <title>Maps Markers</title>
 </head>
 
@@ -26,7 +26,6 @@
     <!-- aqui enpieza el lateral izquierdo -->
     <div class="side-left">
       <div class="sidebar-brand">
-        <!-- <figure><img src="/img/icon_menu.png" alt="Imagen logo inmel"></figure> -->
         <a href="#">Maps Markers</a>
       </div>
       <hr />
@@ -34,20 +33,26 @@
       <div class="container-Marker">
         <input class="input-consulta1" type="text" id="lat" placeholder="Latitud">
         <input class="input-consulta1" type="text" id="long" placeholder="Longitud">
-        <button type="submit" class="btn-Markersmax1" id="btn_consulta1">Consultar</button>
+        <button type="submit" class="btn-Markersmax1" id="btn_consulta1">Insertar</button>
         <hr />
       </div>
 
       <!-- contenedor de la busqueda maxiva -->
       <div class="container-markers">
-        <h4>Consulta Maxiva</h4>
-        <textarea class="cont-markers" id="text_masivo" name="textarea" rows="10" cols="24"
-          placeholder="Ingrese los Usuarios"></textarea>
-        <button type="submit" class="btn-Markersmax" id="btnMasivo">Consultar</button>
+        <h4>Cargar Puntos</h4>
+        <form action="">
+          <input class="input-archivo" type="text" id="nomArchivo" placeholder="Archivo">
+          <input type="button" value="Subir Archivo" class="btn-archivo"
+            onclick="document.getElementById('file').click()">
+          <input class="file" type="file" id="file" />
+        </form>
+        <button type="submit" class="btn-Markersmax" id="btnMasivo">Pintar</button>
       </div>
+
       <hr>
-      <h5>latera va izquierdo</h5>
+      <h5>Herramientas</h5>
     </div>
+
     <!-- aqui empieza el lateral del centro -->
     <div id="map"></div>
 
@@ -71,35 +76,122 @@
           <img type="button" class="color" id="color13" />
           <img type="button" class="color" id="color14" />
           <img type="button" class="color" id="color15" />
-         
+
         </div>
         <div class="colorView" id="colorView">
-        
+
         </div>
       </div>
       <div class="tools">
         <button type="button" class="toolchildren" id="select">
-          <img class="img"src="/img/icored.svg" alt="">
+          <img class="img" src="/img/icored.svg" alt="">
         </button>
         <button type="button" class="toolchildren" id="poligono">
           <button type="button" class="toolchildren" id="puntos">
             <button type="button" class="toolchildren" id="cuadroselect">
       </div>
 
-      <input type="file" id="file" />
-      
+      <div class="cont-title">
+        <h4 class="cont-title">Informacion Punto</h4>
+      </div>
+
+      <div class="container-Info">
+        <div class="cont-fijo1">
+          <input class="input-info" type="text" id="datofijo1" placeholder="Dato Primario">
+          <button type="submit" class="btn-editar" id="btn_editar"><img class="img" src="/img/lapiz.svg" alt=""></button>
+          <button type="submit" class="btn-editar" id="btnguardar"><img class="img" src="/img/disquette.svg"
+              alt=""></button>
+        </div>
+        <div class="cont-fijo1">
+          <input class="input-info" type="text" id="datofijo2" placeholder="Dato Secundario">
+          <button type="submit" class="btn-editar" id="btn_editar"><img class="img" src="/img/lapiz.svg" alt=""></button>
+          <button type="submit" class="btn-editar" id="btnguardar"><img class="img" src="/img/disquette.svg"
+              alt=""></button>
+        </div>
+        <div class="cont-fijo1">
+          <input class="input-info" type="text" id="lati" placeholder="Latitud">
+          <button type="submit" class="btn-editar" id="btn_editar"><img class="img" src="/img/lapiz.svg"
+              alt=""></button>
+          <button type="submit" class="btn-editar" id="btnguardar"><img class="img" src="/img/disquette.svg"
+              alt=""></button>
+        </div>
+
+        <div class="cont-fijo1">
+          <input class="input-info" type="text" id="longt" placeholder="Longitud">
+          <button type="submit" class="btn-editar" id="btn_editar"><img class="img" src="/img/lapiz.svg"
+              alt=""></button>
+          <button type="submit" class="btn-editar" id="btnguardar"><img class="img" src="/img/disquette.svg"
+              alt=""></button>
+        </div>
+        <div class="cont-fijo1">
+          <input class="input-info" type="text" id="nombre" placeholder="Nombre">
+          <button type="submit" class="btn-editar" id="btn_editar"><img class="img" src="/img/lapiz.svg"
+              alt=""></button>
+          <button type="submit" class="btn-editar" id="btnguardar"><img class="img" src="/img/disquette.svg"
+              alt=""></button>
+        </div>
+        <div class="cont-fijo1">
+          <input class="input-info" type="text" id="dirrecion" placeholder="Dirrecion">
+          <button type="submit" class="btn-editar" id="btn_editar"><img class="img" src="/img/lapiz.svg"
+              alt=""></button>
+          <button type="submit" class="btn-editar" id="btnguardar"><img class="img" src="/img/disquette.svg"
+              alt=""></button>
+        </div>
+        <div class="cont-fijo1">
+          <input class="input-info" type="text" id="description" placeholder="Descripcio">
+          <button type="submit" class="btn-editar" id="btn_editar"><img class="img" src="/img/lapiz.svg"
+              alt=""></button>
+          <button type="submit" class="btn-editar" id="btnguardar"><img class="img" src="/img/disquette.svg"
+              alt=""></button>
+        </div>
+        <div class="cont-fijo1">
+          <input class="input-info" type="text" id="dato1" placeholder="dato1">
+          <button type="submit" class="btn-editar" id="btn_editar"><img class="img" src="/img/lapiz.svg"
+              alt=""></button>
+          <button type="submit" class="btn-editar" id="btnguardar"><img class="img" src="/img/disquette.svg"
+              alt=""></button>
+        </div>
+        <div class="cont-fijo1">
+          <input class="input-info" type="text" id="dato2" placeholder="dato2">
+          <button type="submit" class="btn-editar" id="btn_editar"><img class="img" src="/img/lapiz.svg"
+              alt=""></button>
+          <button type="submit" class="btn-editar" id="btnguardar"><img class="img" src="/img/disquette.svg"
+              alt=""></button>
+        </div>
+        <div class="cont-fijo1">
+          <input class="input-info" type="text" id="dato3" placeholder="dato3">
+          <button type="submit" class="btn-editar" id="btn_editar"><img class="img" src="/img/lapiz.svg"
+              alt=""></button>
+          <button type="submit" class="btn-editar" id="btnguardar"><img class="img" src="/img/disquette.svg"
+              alt=""></button>
+        </div>
+        <div class="cont-fijo1">
+          <input class="input-info" type="text" id="dato4" placeholder="dato4">
+          <button type="submit" class="btn-editar" id="btn_editar"><img class="img" src="/img/lapiz.svg"
+              alt=""></button>
+          <button type="submit" class="btn-editar" id="btnguardar"><img class="img" src="/img/disquette.svg"
+              alt=""></button>
+        </div>
+        <div class="cont-fijo1">
+          <input class="input-info" type="text" id="dato5" placeholder="dato5">
+          <button type="submit" class="btn-editar" id="btn_editar"><img class="img" src="/img/lapiz.svg"
+              alt=""></button>
+          <button type="submit" class="btn-editar" id="btnguardar"><img class="img" src="/img/disquette.svg"
+              alt=""></button>
+        </div>
+
+      </div>
+
     </div>
+    <script src="/Js/ejerccios.js"></script>
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-  </div>
-  <script src="/Js/ejerccios.js"></script>
-  <!-- jQuery CDN - Slim version (=without AJAX) -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!--ARCHIVOS PRA GENERAR EXCEL-->
+    <script src="https://unpkg.com/xlsx@0.17.1/dist/xlsx.full.min.js"></script>
+    <script src="https://unpkg.com/file-saverjs@latest/FileSaver.min.js"></script>
+    <script src="https://unpkg.com/tableexport@latest/dist/js/tableexport.min.js"></script>
 
-  <!--ARCHIVOS PRA GENERAR EXCEL-->
-  <script src="https://unpkg.com/xlsx@0.17.1/dist/xlsx.full.min.js"></script>
-  <script src="https://unpkg.com/file-saverjs@latest/FileSaver.min.js"></script>
-  <script src="https://unpkg.com/tableexport@latest/dist/js/tableexport.min.js"></script>
- 
- 
+
 
 </html>

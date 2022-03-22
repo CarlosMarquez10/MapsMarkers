@@ -41,7 +41,7 @@ body{
 .side-left{
 	display: flex;
 	flex-flow: column wrap;
-	justify-content: center;
+	/* justify-content: center; */
 	align-items: center;
 	background-color: var(--ClrPrimary);
 	color: var(--Clrfont);
@@ -49,6 +49,10 @@ body{
 	width:25%;
 	border-top-left-radius: 8px;
 	border-bottom-left-radius: 8px;
+}
+.side-left .sidebar-brand{
+	margin-top: 25px;
+
 }
 .side-left hr{
 	width:100%;
@@ -70,13 +74,13 @@ body{
 	border-bottom: 1px solid #ccc;
 }
 
-.container-markers{
-	margin: .5em;
-	
+.container-Marker{
+	margin: 0.4em;
 }
+
 .input-consulta1{
 	width:80%;
-	height:28%;
+	height:20%;
 	margin-right:0;
 	padding-right: 0;
 	border-radius: 5px;
@@ -91,12 +95,25 @@ body{
 	margin-left:  -4px;
 	text-align: center;
 }
+
+.btn-archivo{
+	background-color: rgb(53, 129, 228);
+    border-radius: 0.4em;
+	width:90%;
+	height:30px;
+	color: white;
+
+}
 .container-Marker hr{
 	margin-top: 20px;
 	margin-bottom:20px;
 	border-color: grey;
 }
 
+.container-markers{
+	margin: .5em;
+	
+}
 .container-markers .cont-markers{
 	
 	margin: 0;
@@ -111,7 +128,7 @@ body{
 
 .btn-Markersmax{
 	width:75%;
-	height: 12%;
+	height: 28px;
 	border-radius: 5px;
 	background-color: rgb(53, 129, 228);
 	color: white;
@@ -128,7 +145,13 @@ body{
 	font-size: 1.2em;
 }
 
+.file{
+   display: none;
+}
 
+.input-archivo{
+	margin: 0.5em;
+}
 
 /* Estilos del Panel del centro (mapa) */
 #map{
@@ -202,6 +225,27 @@ body{
 
 }
 
+.container-Info{
+
+	display: flex;
+	flex-flow: wrap;
+	padding: 0.3em;
+
+}
+
+.cont-fijo1{
+	display: flex;
+}
+
+.btn-editar{
+	background-color: blue;
+	color: white;
+	border-radius: 0.3em;
+}
+
+.input-info{
+	border-radius: 0.3em;
+}
 
 /* aqui se lista los colores de la paleta  */
 /* primera fila */
