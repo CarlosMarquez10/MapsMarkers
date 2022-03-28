@@ -378,7 +378,7 @@ btnmostrar.addEventListener('click', () => {
 });
 
 function mostrardatos(){
-   Nombre.innerText = mispuntos.nombre;
+  document.querySelector('#nombre').value = mispuntos.nombre;
    console.log(Nombre.value);
 };
 
