@@ -42,11 +42,15 @@
         <h4>Cargar Puntos</h4>
         <form action="">
           <input class="input-archivo" type="text" id="nomArchivo" placeholder="Archivo">
-          <input type="button" value="Subir Archivo" class="btn-archivo"
+            <input class="file" type="file" id="file" />
+           <div class="btn-Cpunto">
+            <input type="button" value="Subir Archivo" class="btn-archivo"
             onclick="document.getElementById('file').click()">
-          <input class="file" type="file" id="file" />
+            <button type="submit" class="btn-guardar" id="btnMasivo">Pintar</button>
+           </div> 
+
         </form>
-        <button type="submit" class="btn-Markersmax" id="btnMasivo">Pintar</button>
+        
       </div>
 
       <hr>
@@ -99,20 +103,20 @@
         <div class="cont-fijo1">
           <input class="input-info" type="text" id="datofijo1" placeholder="Dato Primario">
           <button type="submit" class="btn-editar" id="btn_editar"><img class="img" src="/img/lapiz.svg" alt=""></button>
-          <button type="submit" class="btn-editar" id="btnguardar"><img class="img" src="/img/disquette.svg"
+          <button type="submit" class="btn-guardar" id="btnguardar"><img class="img" src="/img/disquette.svg"
               alt=""></button>
         </div>
         <div class="cont-fijo1">
           <input class="input-info" type="text" id="datofijo2" placeholder="Dato Secundario">
           <button type="submit" class="btn-editar" id="btn_editar"><img class="img" src="/img/lapiz.svg" alt=""></button>
-          <button type="submit" class="btn-editar" id="btnguardar"><img class="img" src="/img/disquette.svg"
+          <button type="submit" class="btn-guardar" id="btnguardar"><img class="img" src="/img/disquette.svg"
               alt=""></button>
         </div>
         <div class="cont-fijo1">
           <input class="input-info" type="text" id="lati" placeholder="Latitud">
           <button type="submit" class="btn-editar" id="btn_editar"><img class="img" src="/img/lapiz.svg"
               alt=""></button>
-          <button type="submit" class="btn-editar" id="btnguardar"><img class="img" src="/img/disquette.svg"
+          <button type="submit" class="btn-guardar" id="btnguardar"><img class="img" src="/img/disquette.svg"
               alt=""></button>
         </div>
 
@@ -120,63 +124,63 @@
           <input class="input-info" type="text" id="longt" placeholder="Longitud">
           <button type="submit" class="btn-editar" id="btn_editar"><img class="img" src="/img/lapiz.svg"
               alt=""></button>
-          <button type="submit" class="btn-editar" id="btnguardar"><img class="img" src="/img/disquette.svg"
+          <button type="submit" class="btn-guardar" id="btnguardar"><img class="img" src="/img/disquette.svg"
               alt=""></button>
         </div>
         <div class="cont-fijo1">
           <input class="input-info" type="text" id="nombre" placeholder="Nombre">
           <button type="submit" class="btn-editar" id="btn_editar"><img class="img" src="/img/lapiz.svg"
               alt=""></button>
-          <button type="submit" class="btn-editar" id="btnguardar"><img class="img" src="/img/disquette.svg"
+          <button type="submit" class="btn-guardar" id="btnguardar"><img class="img" src="/img/disquette.svg"
               alt=""></button>
         </div>
         <div class="cont-fijo1">
           <input class="input-info" type="text" id="dirrecion" placeholder="Dirrecion">
           <button type="submit" class="btn-editar" id="btn_editar"><img class="img" src="/img/lapiz.svg"
               alt=""></button>
-          <button type="submit" class="btn-editar" id="btnguardar"><img class="img" src="/img/disquette.svg"
+          <button type="submit" class="btn-guardar" id="btnguardar"><img class="img" src="/img/disquette.svg"
               alt=""></button>
         </div>
         <div class="cont-fijo1">
           <input class="input-info" type="text" id="description" placeholder="Descripcio">
           <button type="submit" class="btn-editar" id="btn_editar"><img class="img" src="/img/lapiz.svg"
               alt=""></button>
-          <button type="submit" class="btn-editar" id="btnguardar"><img class="img" src="/img/disquette.svg"
+          <button type="submit" class="btn-guardar" id="btnguardar"><img class="img" src="/img/disquette.svg"
               alt=""></button>
         </div>
         <div class="cont-fijo1">
           <input class="input-info" type="text" id="dato1" placeholder="dato1">
           <button type="submit" class="btn-editar" id="btn_editar"><img class="img" src="/img/lapiz.svg"
               alt=""></button>
-          <button type="submit" class="btn-editar" id="btnguardar"><img class="img" src="/img/disquette.svg"
+          <button type="submit" class="btn-guardar" id="btnguardar"><img class="img" src="/img/disquette.svg"
               alt=""></button>
         </div>
         <div class="cont-fijo1">
           <input class="input-info" type="text" id="dato2" placeholder="dato2">
           <button type="submit" class="btn-editar" id="btn_editar"><img class="img" src="/img/lapiz.svg"
               alt=""></button>
-          <button type="submit" class="btn-editar" id="btnguardar"><img class="img" src="/img/disquette.svg"
+          <button type="submit" class="btn-guardar" id="btnguardar"><img class="img" src="/img/disquette.svg"
               alt=""></button>
         </div>
         <div class="cont-fijo1">
           <input class="input-info" type="text" id="dato3" placeholder="dato3">
           <button type="submit" class="btn-editar" id="btn_editar"><img class="img" src="/img/lapiz.svg"
               alt=""></button>
-          <button type="submit" class="btn-editar" id="btnguardar"><img class="img" src="/img/disquette.svg"
+          <button type="submit" class="btn-guardar" id="btnguardar"><img class="img" src="/img/disquette.svg"
               alt=""></button>
         </div>
         <div class="cont-fijo1">
           <input class="input-info" type="text" id="dato4" placeholder="dato4">
           <button type="submit" class="btn-editar" id="btn_editar"><img class="img" src="/img/lapiz.svg"
               alt=""></button>
-          <button type="submit" class="btn-editar" id="btnguardar"><img class="img" src="/img/disquette.svg"
+          <button type="submit" class="btn-guardar" id="btnguardar"><img class="img" src="/img/disquette.svg"
               alt=""></button>
         </div>
         <div class="cont-fijo1">
           <input class="input-info" type="text" id="dato5" placeholder="dato5">
           <button type="submit" class="btn-editar" id="btn_editar"><img class="img" src="/img/lapiz.svg"
               alt=""></button>
-          <button type="submit" class="btn-editar" id="btnguardar"><img class="img" src="/img/disquette.svg"
+          <button type="submit" class="btn-guardar" id="btnguardar"><img class="img" src="/img/disquette.svg"
               alt=""></button>
         </div>
 
