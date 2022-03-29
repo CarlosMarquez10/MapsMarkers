@@ -1,4 +1,4 @@
-let map = L.map("map").setView([8.032340,-72.901503], 8);
+let map = L.map("map").setView([8.032340, -72.901503], 8);
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(map);
 
 
@@ -367,35 +367,29 @@ function pintar(lati, longi, Nom, Dir, d1, d2) {
 
 
 function pasarpunto(puntos) {
+  var datoN = "";
+  var index = 0;
+  if (mispuntos.length === 0) {
     mispuntos.push(puntos);
-  // return console.log(mispuntos);
-};
-
-function Eliminarduplicado(){
-  
-  var index = mispuntos.indexOf();
-  console.log(index);
-  console.log(mipunto);
-  if(index > -1) {
-    
-   mispuntos.pop(index);
- 
-  }else{
-     
-    mispuntos.push(mipunto);
-
+  }
+  datoN = puntos.nombre;
+  index = mispuntos.findIndex(mipunto => mipunto.nombre === datoN)
+  if (index > -1) {
+    mispuntos.splice(index, 1, puntos);
+  } else {
+    mispuntos.push(puntos);
   }
 
-}
+  mostrardatos(index);
+};
 
 btnmostrar.addEventListener('click', () => {
-  // mostrardatos();
   console.log(mispuntos);
-  
+ 
 });
 
-// function mostrardatos(){
-//   document.querySelector('#nombre').value = mispuntos.nombre;
-//    console.log(Nombre.value);
-// };
+function mostrardatos(index){
+  document.querySelector('#nombre').value = "";
+  document.querySelector('#nombre').value = mispuntos[index].nombre;
+};
 
