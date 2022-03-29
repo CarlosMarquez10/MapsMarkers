@@ -1,4 +1,4 @@
-let map = L.map("map").setView([7.944311, -72.490174], 13);
+let map = L.map("map").setView([8.032340,-72.901503], 8);
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(map);
 
 
@@ -36,7 +36,8 @@ const dato5 = document.getElementById('dato5').value;
 const btn_editar = document.querySelector('#btn_editar');
 const btnguardar = document.querySelector('#btnguardar');
 
-
+var Resultado = new Array();
+var mispuntos = new Array();
 var datosTextArea = new Array();
 
 
@@ -364,21 +365,37 @@ function pintar(lati, longi, Nom, Dir, d1, d2) {
 
 }
 
-var mispuntos = new Array();
 
 function pasarpunto(puntos) {
-  console.log(puntos);
-  mispuntos.push(puntos);
+    mispuntos.push(puntos);
   // return console.log(mispuntos);
 };
 
+function Eliminarduplicado(){
+  
+  var index = mispuntos.indexOf();
+  console.log(index);
+  console.log(mipunto);
+  if(index > -1) {
+    
+   mispuntos.pop(index);
+ 
+  }else{
+     
+    mispuntos.push(mipunto);
+
+  }
+
+}
+
 btnmostrar.addEventListener('click', () => {
-  mostrardatos();
+  // mostrardatos();
   console.log(mispuntos);
+  
 });
 
-function mostrardatos(){
-  document.querySelector('#nombre').value = mispuntos.nombre;
-   console.log(Nombre.value);
-};
+// function mostrardatos(){
+//   document.querySelector('#nombre').value = mispuntos.nombre;
+//    console.log(Nombre.value);
+// };
 
