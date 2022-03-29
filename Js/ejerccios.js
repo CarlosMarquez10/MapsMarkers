@@ -390,6 +390,20 @@ btnmostrar.addEventListener('click', () => {
 
 function mostrardatos(index){
   document.querySelector('#nombre').value = "";
+ document.querySelector('#datofijo1').value = "";
+ document.querySelector('#datofijo2').value = "";
+ document.querySelector('#lati').value = "";
+ document.querySelector('#longt').value = "";
+ document.querySelector('#dirrecion').value = "";
+ document.querySelector('#description').value = "";
+ document.querySelector('#dato1').value = "";
+ document.querySelector('#dato2').value = "";
+ document.querySelector('#dato3').value = "";
+ document.querySelector('#dato4').value = "";
+ document.querySelector('#dato5').value = "";
+
   document.querySelector('#nombre').value = mispuntos[index].nombre;
+  document.querySelector('#dato1').value = mispuntos[index].coloricono;
+  document.querySelector('#dirrecion').value = mispuntos[index].Direccion;
 };
 
