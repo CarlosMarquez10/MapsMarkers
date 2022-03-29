@@ -36,6 +36,8 @@ const dato5 = document.getElementById('dato5').value;
 const btn_editar = document.querySelector('#btn_editar');
 const btnguardar = document.querySelector('#btnguardar');
 
+var fecha_actual = ""
+
 var Resultado = new Array();
 var mispuntos = new Array();
 var datosTextArea = new Array();
@@ -407,3 +409,80 @@ function mostrardatos(index){
   document.querySelector('#dirrecion').value = mispuntos[index].Direccion;
 };
 
+
+//OBTENER LA FECHA ACTUAL
+function fecha_hoy() {
+  const hoy = new Date();
+  fecha_actual = hoy.getDate() + "/" + obtener_mes(hoy.getMonth()+1) + "/" + hoy.getFullYear();
+}
+
+//CONVERTIR EL NUMERO DEL MES EN TEXTO
+function obtener_mes(x){
+  switch (x) {
+      case 1:
+          return "Ene";
+          break;
+      case 2:
+          return "Feb";
+          break;
+      case 3:
+          return "Mar";
+          break;
+      case 4:
+          return "Abr";
+          break;
+      case 5:
+          return "May";
+          break;
+      case 6:
+          return "Jun";
+          break;
+      case 7:
+          return "Jul";
+          break;
+      case 8:
+          return "Ago";
+          break;
+      case 9:
+          return "Sep";
+          break;
+      case 10:
+          return "Oct";
+          break;
+      case 11:
+          return "Nov";
+          break;
+      case 12:
+          return "Dic";
+          break;
+  }
+}
+
+
+//EXPORTAR EXCEL TODAS LAS CORRERIAS PROGRAMADAS
+const $btnExportar2 = document.querySelector("#poligono"), $tabla2 = document.querySelector("#tabla");
+$btnExportar2.addEventListener("click", function() { 
+    cargar_tabla_2();
+    fecha_hoy();
+    var nombre_archivo = "Archivo Dia - "+fecha_actual;
+    let tableExport = new TableExport($tabla2, {
+        exportButtons: false, // No queremos botones
+        filename: nombre_archivo, //Nombre del archivo de Excel
+        sheetname: "Hoja 1", //Título de la hoja
+    });
+    let datos = tableExport.getExportData();
+    let preferenciasDocumento = datos.tabla.xlsx;
+    tableExport.export2file(preferenciasDocumento.data, preferenciasDocumento.mimeType, preferenciasDocumento.filename, preferenciasDocumento.fileExtension, preferenciasDocumento.merges, preferenciasDocumento.RTL, preferenciasDocumento.sheetname);
+    // document.getElementById("alerta_vista").style.display = "block";
+    // document.getElementById("alerta_vista").className = 'alerta_vista_success';
+    // document.getElementById("alerta_vista").innerHTML = "El archivo "+nombre_archivo+" se ha descargado correctamente!";
+});
+
+//CARGAR EN TABLA TODAS LAS CORRERIAS PARA EXPORTAR A EXCEL
+function cargar_tabla_2(){ 
+  var aux = "";    
+  for (var i = 0; i < mispuntos.length; i++) {
+      aux += "<tr'><td>"+ mispuntos[i].nombre+"</td><td>"+ mispuntos[i].Direccion +"</td><td>"+ mispuntos[i].coloricono+"</td><tr>";
+  }   
+  document.getElementById("tbody_tabla").innerHTML = aux;   
+};
