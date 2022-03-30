@@ -1,6 +1,5 @@
-let map = L.map("map").setView([8.032340, -72.901503], 8);
+let map = L.map("map").setView([8.03234, -72.901503], 8);
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(map);
-
 
 const colorview = document.querySelector(".colorView");
 const color1 = document.querySelector("#color1");
@@ -20,37 +19,36 @@ const color15 = document.querySelector("#color15");
 var btnMasivo = document.querySelector("#btnMasivo");
 const btnBuscar = document.querySelector("#btn_consulta1");
 const btnmostrar = document.querySelector("#select");
-document.getElementById('file').addEventListener('change', readFile, false);
-const datofijo1 = document.getElementById('datofijo1').value;
-const datofijo2 = document.getElementById('datofijo2').value;
-const lati = document.getElementById('lati').value;
-const longt = document.getElementById('longt').value;
-const Nombre = document.querySelector('#nombre');
-const Dirrecion = document.getElementById('dirrecion').value;
-const Description = document.getElementById('description').value;
-const dato1 = document.getElementById('dato1').value;
-const dato2 = document.getElementById('dato2').value;
-const dato3 = document.getElementById('dato3').value;
-const dato4 = document.getElementById('dato4').value;
-const dato5 = document.getElementById('dato5').value;
-const btn_editar = document.querySelector('#btn_editar');
-const btnguardar = document.querySelector('#btnguardar');
+document.getElementById("file").addEventListener("change", readFile, false);
+const datofijo1 = document.getElementById("datofijo1").value;
+const datofijo2 = document.getElementById("datofijo2").value;
+const lati = document.getElementById("lati").value;
+const longt = document.getElementById("longt").value;
+const Nombre = document.querySelector("#nombre");
+const Dirrecion = document.getElementById("dirrecion").value;
+const Description = document.getElementById("description").value;
+const dato1 = document.getElementById("dato1").value;
+const dato2 = document.getElementById("dato2").value;
+const dato3 = document.getElementById("dato3").value;
+const dato4 = document.getElementById("dato4").value;
+const dato5 = document.getElementById("dato5").value;
+const btn_editar = document.querySelector("#btn_editar");
+const btnguardar = document.querySelector("#btnguardar");
 
-var fecha_actual = ""
+var fecha_actual = "";
 
 var Resultado = new Array();
 var mispuntos = new Array();
 var datosTextArea = new Array();
 
-
 var iconoBlue = L.icon({
   iconUrl: "img/icoblue.svg",
-  iconSize: [30, 40]
+  iconSize: [30, 40],
 });
 
 var iconogreen = L.icon({
   iconUrl: "img/icogreen.svg",
-  iconSize: [30, 40]
+  iconSize: [30, 40],
 });
 
 var iconoGrenYellow = L.icon({
@@ -59,7 +57,7 @@ var iconoGrenYellow = L.icon({
 });
 var iconogrey = L.icon({
   iconUrl: "img/icogrey.svg",
-  iconSize: [30, 40]
+  iconSize: [30, 40],
 });
 
 var iconLightSalmon = L.icon({
@@ -79,7 +77,7 @@ var iconomagenta = L.icon({
 
 var iconoorange = L.icon({
   iconUrl: "img/icoorange.svg",
-  iconSize: [30, 40]
+  iconSize: [30, 40],
 });
 
 var iconoOrangeRed = L.icon({
@@ -94,27 +92,27 @@ var iconoLightSkyBlue = L.icon({
 
 var iconopurple = L.icon({
   iconUrl: "img/icopurple.svg",
-  iconSize: [30, 40]
+  iconSize: [30, 40],
 });
 
 var iconoRed = L.icon({
   iconUrl: "img/icored.svg",
-  iconSize: [30, 40]
+  iconSize: [30, 40],
 });
 
 var iconoYellow = L.icon({
   iconUrl: "img/icoyellow.svg",
-  iconSize: [30, 40]
+  iconSize: [30, 40],
 });
 
 var iconoBlack = L.icon({
   iconUrl: "img/icoblack.svg",
-  iconSize: [30, 40]
+  iconSize: [30, 40],
 });
 
 var iconoWhite = L.icon({
   iconUrl: "img/icowhite.svg",
-  iconSize: [30, 40]
+  iconSize: [30, 40],
 });
 
 var iconox = "";
@@ -223,11 +221,9 @@ var nombreColor = "Azul";
 
 // cambiar el color de los puntos
 
-
 // proceso para buscar ubicacion individual
 
-btnBuscar.addEventListener('click', () => {
-
+btnBuscar.addEventListener("click", () => {
   var latitud = document.getElementById("lat").value;
   var longitud = document.getElementById("long").value;
 
@@ -239,32 +235,30 @@ btnBuscar.addEventListener('click', () => {
   }
   var damepuntos = new Puntos(latitud, longitud);
   console.log(damepuntos.lat);
-  var puntox = L.marker([damepuntos.lat, damepuntos.long], { icon: colorico })
-    .addTo(map);
-  puntox.on('click', cambiarico);
+  var puntox = L.marker([damepuntos.lat, damepuntos.long], {
+    icon: colorico,
+  }).addTo(map);
+  puntox.on("click", cambiarico);
 
   function cambiarico() {
     // map.removeLayer(this);
     puntox.setIcon(colorico);
-  };
-
+  }
 });
-
 
 function cambiarColor(color, nomcolor) {
   colorico = color;
   nombreColor = nomcolor;
-};
-
+}
 
 // Codigo para leer archivo excel
 
 function parseCSV(text) {
   // Obtenemos las lineas del texto
-  let lines = text.replace(/\r/g, '').split('\n');
-  return lines.map(line => {
+  let lines = text.replace(/\r/g, "").split("\n");
+  return lines.map((line) => {
     // Por cada linea obtenemos los valores
-    let values = line.split(';');
+    let values = line.split(";");
     return values;
   });
 }
@@ -296,77 +290,89 @@ function readFile(evt) {
     pasardato(output);
   };
 
-
   // Leemos el contenido del archivo seleccionado
   reader.readAsBinaryString(file);
-
-
-};
+}
 
 function pasardato(dato) {
-
   var output = new Array();
   output = dato;
 
-  btnMasivo.addEventListener('click', () => {
+  btnMasivo.addEventListener("click", () => {
     for (var i = 1; i < output.length; i++) {
       var latitud = output[0];
       var longitud = output[1];
       var nom = output[2];
       var dire = output[3];
-      var dato1 = output[4];
-      var dato2 = output[5];
+      var des = output[4];
+      var dato1 = output[5];
+      var dato2 = output[6];
+      var dato3 = output[7];
+      var dato4 = output[8];
+      var dato5 = output[9];
     }
     for (var j = 0; j < latitud.length; j++) {
       var lat = latitud[j];
       var long = longitud[j];
-      let Nombre = nom[j];
-      let Direccion = dire[j];
-      let datouno = dato1[j];
-      let datodos = dato2[j];
-      pintar(lat, long, Nombre, Direccion, datouno, datodos);
-
+      var Nombre = nom[j];
+      var Direccion = dire[j];
+      var Description = des[j];
+      var anexo1 = dato1[j];
+      var anexo2 = dato2[j];
+      var anexo3 = dato3[j];
+      var anexo4 = dato4[j];
+      var anexo5 = dato5[j];
+      pintar(lat, long, Nombre, Direccion, Description, anexo1, anexo2, anexo3,anexo4, anexo5 );
     }
-  }
-  );
+  });
 }
 
-
-function pintar(lati, longi, Nom, Dir, d1, d2) {
-
+function pintar(lati, longi, Nomb, _Direccion, _Description, _anexo1, _anexo2, _anexo3, _anexo4, _anexo5) {
   class Puntos {
-    constructor(latit, longit, Nomb, Dire, dt1, dt2) {
+    constructor(latit, longit, Nomb, Dire, Desc, an1, an2, an3, an4, an5) {
       this.lati = latit;
       this.longi = longit;
-      this.Nombre = Nomb;
-      this.Direcciones = Dire;
-      this.dato1 = dt1;
-      this.dato2 = dt2;
+      this.Nomb = Nomb;
+      this.Direccion = Dire;
+      this.Description = Desc;
+      this.anexo1 = an1;
+      this.anexo2 = an2;
+      this.anexo3 = an3;
+      this.anexo4 = an4;
+      this.anexo5 = an5;
     }
   }
-  var damepuntos = new Puntos(lati, longi, Nom, Dir, d1, d2);
+  var damepuntos = new Puntos(lati, longi, Nomb, _Direccion, _Description, _anexo1, _anexo2, _anexo3, _anexo4, _anexo5);
   var puntox = L.marker([damepuntos.lati, damepuntos.longi], { icon: colorico })
     .addTo(map)
-    .bindPopup(`Orden: ${damepuntos.dato2} <br> Ciclo: ${damepuntos.dato1} <br> Nombre: ${damepuntos.Nombre}`);
+    .bindPopup(
+      `Orden: ${damepuntos.dato2} <br> Ciclo: ${damepuntos.dato1}`
+    );
 
   // .openPopup();
 
-  puntox.on('click', cambiarico);
+  puntox.on("click", cambiarico);
 
   function cambiarico() {
     // map.removeLayer(this);
     puntox.setIcon(colorico);
 
     var datosguardar = new Object();
-    datosguardar.nombre = damepuntos.Nombre;
+    datosguardar.latitud = damepuntos.lati;
+    datosguardar.longitud = damepuntos.longi;
+    datosguardar.nombre = damepuntos.Nomb;
     datosguardar.Direccion = damepuntos.Direcciones;
+    datosguardar.Descripcion = damepuntos.Descript;
     datosguardar.coloricono = nombreColor;
+    datosguardar.anexo1 = damepuntos.anesxos1;
+    datosguardar.anexo2 = damepuntos.anesxos2;
+    datosguardar.anexo3 = damepuntos.anesxos3;
+    datosguardar.anexo4 = damepuntos.anesxos4;
+    datosguardar.anexo5 = damepuntos.anesxos5;
 
     pasarpunto(datosguardar);
-  };
-
+  }
 }
-
 
 function pasarpunto(puntos) {
   var datoN = "";
@@ -375,7 +381,7 @@ function pasarpunto(puntos) {
     mispuntos.push(puntos);
   }
   datoN = puntos.nombre;
-  index = mispuntos.findIndex(mipunto => mipunto.nombre === datoN)
+  index = mispuntos.findIndex((mipunto) => mipunto.nombre === datoN);
   if (index > -1) {
     mispuntos.splice(index, 1, puntos);
   } else {
@@ -383,106 +389,145 @@ function pasarpunto(puntos) {
   }
 
   mostrardatos(index);
-};
+}
 
-btnmostrar.addEventListener('click', () => {
+btnmostrar.addEventListener("click", () => {
   console.log(mispuntos);
- 
 });
 
-function mostrardatos(index){
-  document.querySelector('#nombre').value = "";
- document.querySelector('#datofijo1').value = "";
- document.querySelector('#datofijo2').value = "";
- document.querySelector('#lati').value = "";
- document.querySelector('#longt').value = "";
- document.querySelector('#dirrecion').value = "";
- document.querySelector('#description').value = "";
- document.querySelector('#dato1').value = "";
- document.querySelector('#dato2').value = "";
- document.querySelector('#dato3').value = "";
- document.querySelector('#dato4').value = "";
- document.querySelector('#dato5').value = "";
+function mostrardatos(index) {
+  document.querySelector("#nombre").value = "";
+  document.querySelector("#datofijo1").value = "";
+  document.querySelector("#datofijo2").value = "";
+  document.querySelector("#lati").value = "";
+  document.querySelector("#longt").value = "";
+  document.querySelector("#dirrecion").value = "";
+  document.querySelector("#description").value = "";
+  document.querySelector("#dato1").value = "";
+  document.querySelector("#dato2").value = "";
+  document.querySelector("#dato3").value = "";
+  document.querySelector("#dato4").value = "";
+  document.querySelector("#dato5").value = "";
 
-  document.querySelector('#nombre').value = mispuntos[index].nombre;
-  document.querySelector('#dato1').value = mispuntos[index].coloricono;
-  document.querySelector('#dirrecion').value = mispuntos[index].Direccion;
-};
-
+  document.querySelector("#lati").value = mispuntos[index].latitud;
+  document.querySelector("#longt").value = mispuntos[index].Longitud;
+  document.querySelector("#nombre").value = mispuntos[index].nombre;
+  document.querySelector("#dirrecion").value = mispuntos[index].Direccion;
+  document.querySelector("#description").value = mispuntos[index].Descripcion;
+  document.querySelector("#dato1").value = mispuntos[index].anexo1;
+  document.querySelector("#dato2").value = mispuntos[index].anexo2;
+  document.querySelector("#dato3").value = mispuntos[index].anexo3;
+  document.querySelector("#dato4").value = mispuntos[index].anexo4;
+  document.querySelector("#dato5").value = mispuntos[index].anexo5;
+}
 
 //OBTENER LA FECHA ACTUAL
 function fecha_hoy() {
   const hoy = new Date();
-  fecha_actual = hoy.getDate() + "/" + obtener_mes(hoy.getMonth()+1) + "/" + hoy.getFullYear();
+  fecha_actual =
+    hoy.getDate() +
+    "/" +
+    obtener_mes(hoy.getMonth() + 1) +
+    "/" +
+    hoy.getFullYear();
 }
 
 //CONVERTIR EL NUMERO DEL MES EN TEXTO
-function obtener_mes(x){
+function obtener_mes(x) {
   switch (x) {
-      case 1:
-          return "Ene";
-          break;
-      case 2:
-          return "Feb";
-          break;
-      case 3:
-          return "Mar";
-          break;
-      case 4:
-          return "Abr";
-          break;
-      case 5:
-          return "May";
-          break;
-      case 6:
-          return "Jun";
-          break;
-      case 7:
-          return "Jul";
-          break;
-      case 8:
-          return "Ago";
-          break;
-      case 9:
-          return "Sep";
-          break;
-      case 10:
-          return "Oct";
-          break;
-      case 11:
-          return "Nov";
-          break;
-      case 12:
-          return "Dic";
-          break;
+    case 1:
+      return "Ene";
+      break;
+    case 2:
+      return "Feb";
+      break;
+    case 3:
+      return "Mar";
+      break;
+    case 4:
+      return "Abr";
+      break;
+    case 5:
+      return "May";
+      break;
+    case 6:
+      return "Jun";
+      break;
+    case 7:
+      return "Jul";
+      break;
+    case 8:
+      return "Ago";
+      break;
+    case 9:
+      return "Sep";
+      break;
+    case 10:
+      return "Oct";
+      break;
+    case 11:
+      return "Nov";
+      break;
+    case 12:
+      return "Dic";
+      break;
   }
 }
 
-
 //EXPORTAR EXCEL TODAS LAS CORRERIAS PROGRAMADAS
-const $btnExportar2 = document.querySelector("#poligono"), $tabla2 = document.querySelector("#tabla");
-$btnExportar2.addEventListener("click", function() { 
-    cargar_tabla_2();
-    fecha_hoy();
-    var nombre_archivo = "Archivo Dia - "+fecha_actual;
-    let tableExport = new TableExport($tabla2, {
-        exportButtons: false, // No queremos botones
-        filename: nombre_archivo, //Nombre del archivo de Excel
-        sheetname: "Hoja 1", //Título de la hoja
-    });
-    let datos = tableExport.getExportData();
-    let preferenciasDocumento = datos.tabla.xlsx;
-    tableExport.export2file(preferenciasDocumento.data, preferenciasDocumento.mimeType, preferenciasDocumento.filename, preferenciasDocumento.fileExtension, preferenciasDocumento.merges, preferenciasDocumento.RTL, preferenciasDocumento.sheetname);
-    // document.getElementById("alerta_vista").style.display = "block";
-    // document.getElementById("alerta_vista").className = 'alerta_vista_success';
-    // document.getElementById("alerta_vista").innerHTML = "El archivo "+nombre_archivo+" se ha descargado correctamente!";
+const $btnExportar2 = document.querySelector("#poligono"),
+  $tabla2 = document.querySelector("#tabla");
+$btnExportar2.addEventListener("click", function () {
+  cargar_tabla_2();
+  fecha_hoy();
+  var nombre_archivo = "Maps Markers - " + fecha_actual;
+  let tableExport = new TableExport($tabla2, {
+    exportButtons: false, // No queremos botones
+    filename: nombre_archivo, //Nombre del archivo de Excel
+    sheetname: "Hoja 1", //Título de la hoja
+  });
+  let datos = tableExport.getExportData();
+  let preferenciasDocumento = datos.tabla.xlsx;
+  tableExport.export2file(
+    preferenciasDocumento.data,
+    preferenciasDocumento.mimeType,
+    preferenciasDocumento.filename,
+    preferenciasDocumento.fileExtension,
+    preferenciasDocumento.merges,
+    preferenciasDocumento.RTL,
+    preferenciasDocumento.sheetname
+  );
+  // document.getElementById("alerta_vista").style.display = "block";
+  // document.getElementById("alerta_vista").className = 'alerta_vista_success';
+  // document.getElementById("alerta_vista").innerHTML = "El archivo "+nombre_archivo+" se ha descargado correctamente!";
 });
 
 //CARGAR EN TABLA TODAS LAS CORRERIAS PARA EXPORTAR A EXCEL
-function cargar_tabla_2(){ 
-  var aux = "";    
+function cargar_tabla_2() {
+  var aux = "";
   for (var i = 0; i < mispuntos.length; i++) {
-      aux += "<tr'><td>"+ mispuntos[i].nombre+"</td><td>"+ mispuntos[i].Direccion +"</td><td>"+ mispuntos[i].coloricono+"</td><tr>";
-  }   
-  document.getElementById("tbody_tabla").innerHTML = aux;   
-};
+    aux +=
+      "<tr'><td>" +
+      mispuntos[i].latitud +
+      "</td><td>" +
+      mispuntos[i].longitud +
+      "</td><td>" +
+      mispuntos[i].nombre +
+      "</td><td>" +
+      mispuntos[i].Direccion +
+      "</td><td>" +
+      mispuntos[i].Descripcion +
+      "</td><td>" +
+      mispuntos[i].anexo2 +
+      "</td><td>" +
+      mispuntos[i].anexo3 +
+      "</td><td>" +
+      mispuntos[i].anexo4 +
+      "</td><td>" +
+      mispuntos[i].anexo5 +
+      "</td><td>" +
+      mispuntos[i].coloricono +
+      "</td><tr>";
+  }
+  document.getElementById("tbody_tabla").innerHTML = aux;
+}
