@@ -20,18 +20,6 @@ var btnMasivo = document.querySelector("#btnMasivo");
 const btnBuscar = document.querySelector("#btn_consulta1");
 const btnmostrar = document.querySelector("#select");
 document.getElementById("file").addEventListener("change", readFile, false);
-const datofijo1 = document.getElementById("datofijo1").value;
-const datofijo2 = document.getElementById("datofijo2").value;
-const lati = document.getElementById("lati").value;
-const longt = document.getElementById("longt").value;
-const Nombre = document.querySelector("#nombre");
-const Dirrecion = document.getElementById("dirrecion").value;
-const Description = document.getElementById("description").value;
-const dato1 = document.getElementById("dato1").value;
-const dato2 = document.getElementById("dato2").value;
-const dato3 = document.getElementById("dato3").value;
-const dato4 = document.getElementById("dato4").value;
-const dato5 = document.getElementById("dato5").value;
 const btn_editar = document.querySelector("#btn_editar");
 const btnguardar = document.querySelector("#btnguardar");
 
@@ -346,7 +334,7 @@ function pintar(lati, longi, Nomb, _Direccion, _Description, _anexo1, _anexo2, _
   var puntox = L.marker([damepuntos.lati, damepuntos.longi], { icon: colorico })
     .addTo(map)
     .bindPopup(
-      `Orden: ${damepuntos.dato2} <br> Ciclo: ${damepuntos.dato1}`
+      `Orden: ${damepuntos.anexo1} <br> Ciclo: ${damepuntos.Description} <br> Medidor: ${damepuntos.anexo2}`
     );
 
   // .openPopup();
@@ -361,14 +349,14 @@ function pintar(lati, longi, Nomb, _Direccion, _Description, _anexo1, _anexo2, _
     datosguardar.latitud = damepuntos.lati;
     datosguardar.longitud = damepuntos.longi;
     datosguardar.nombre = damepuntos.Nomb;
-    datosguardar.Direccion = damepuntos.Direcciones;
-    datosguardar.Descripcion = damepuntos.Descript;
+    datosguardar.Direccion = damepuntos.Direccion;
+    datosguardar.Descripcion = damepuntos.Description;
     datosguardar.coloricono = nombreColor;
-    datosguardar.anexo1 = damepuntos.anesxos1;
-    datosguardar.anexo2 = damepuntos.anesxos2;
-    datosguardar.anexo3 = damepuntos.anesxos3;
-    datosguardar.anexo4 = damepuntos.anesxos4;
-    datosguardar.anexo5 = damepuntos.anesxos5;
+    datosguardar.anexo1 = damepuntos.anexo1;
+    datosguardar.anexo2 = damepuntos.anexo2;
+    datosguardar.anexo3 = damepuntos.anexo3;
+    datosguardar.anexo4 = damepuntos.anexo4;
+    datosguardar.anexo5 = damepuntos.anexo5;
 
     pasarpunto(datosguardar);
   }
@@ -396,21 +384,10 @@ btnmostrar.addEventListener("click", () => {
 });
 
 function mostrardatos(index) {
-  document.querySelector("#nombre").value = "";
-  document.querySelector("#datofijo1").value = "";
-  document.querySelector("#datofijo2").value = "";
-  document.querySelector("#lati").value = "";
-  document.querySelector("#longt").value = "";
-  document.querySelector("#dirrecion").value = "";
-  document.querySelector("#description").value = "";
-  document.querySelector("#dato1").value = "";
-  document.querySelector("#dato2").value = "";
-  document.querySelector("#dato3").value = "";
-  document.querySelector("#dato4").value = "";
-  document.querySelector("#dato5").value = "";
+
 
   document.querySelector("#lati").value = mispuntos[index].latitud;
-  document.querySelector("#longt").value = mispuntos[index].Longitud;
+  document.querySelector("#longt").value = mispuntos[index].longitud;
   document.querySelector("#nombre").value = mispuntos[index].nombre;
   document.querySelector("#dirrecion").value = mispuntos[index].Direccion;
   document.querySelector("#description").value = mispuntos[index].Descripcion;
@@ -419,6 +396,23 @@ function mostrardatos(index) {
   document.querySelector("#dato3").value = mispuntos[index].anexo3;
   document.querySelector("#dato4").value = mispuntos[index].anexo4;
   document.querySelector("#dato5").value = mispuntos[index].anexo5;
+
+  
+  // document.querySelector("#nombre").value = "";
+  // document.querySelector("#datofijo1").value = "";
+  // document.querySelector("#datofijo2").value = "";
+  // document.querySelector("#lati").value = "";
+  // document.querySelector("#longt").value = "";
+  // document.querySelector("#dirrecion").value = "";
+  // document.querySelector("#description").value = "";
+  // document.querySelector("#dato1").value = "";
+  // document.querySelector("#dato2").value = "";
+  // document.querySelector("#dato3").value = "";
+  // document.querySelector("#dato4").value = "";
+  // document.querySelector("#dato5").value = "";
+
+
+
 }
 
 //OBTENER LA FECHA ACTUAL
