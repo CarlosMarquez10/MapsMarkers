@@ -334,7 +334,7 @@ function pintar(lati, longi, Nomb, _Direccion, _Description, _anexo1, _anexo2, _
   var puntox = L.marker([damepuntos.lati, damepuntos.longi], { icon: colorico })
     .addTo(map)
     .bindPopup(
-      `Orden: ${damepuntos.anexo1} <br> Ciclo: ${damepuntos.Description} <br> Medidor: ${damepuntos.anexo2}`
+      `Orden: ${damepuntos.anexo1}`
     );
 
   // .openPopup();
