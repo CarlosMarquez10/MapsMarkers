@@ -360,7 +360,9 @@ function pintar(lati, longi, Nomb, _Direccion, _Description, _anexo1, _anexo2, _
 
     pasarpunto(datosguardar);
   }
-}
+}  
+
+// funcion para pasar datosfijos individual
 
 function pasarpunto(puntos) {
   var datoN = "";
