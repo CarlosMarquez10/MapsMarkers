@@ -19,6 +19,28 @@
   --clrblack:black;
   --clrWhite:rgb(228, 222, 222);
  --clrWhite1: white;
+ --clrFireBrick: FireBrick;
+ --clrIndianRed: IndianRed;
+ --clrPaleVioletRed: LavenderBlush;
+ --clrTomato: Tomato;
+ --clrPaleGoldenrod: PaleGoldenrod;
+ --clrDarkKhaki: DarkKhaki;
+ --clrDarkSlateBlue: DarkSlateBlue;
+ --clrMediumPurple: MediumPurple;
+ --clrSpringGreen: SpringGreen;
+ --clrOlive: Olive;
+ --clrLightSeaGreen: LightSeaGreen;
+ --clrAquamarine: Aquamarine;
+ --clrRosyBrown: RosyBrown;
+
+
+
+
+
+
+
+
+
 
   
 
@@ -242,12 +264,14 @@ body{
 	background-color:  rgb(53, 129, 228);
 	color: white;
 	border-radius: 0.3em;
+	width: 97px;
 }
 
 .btn-guardar{
 	background-color:  rgb(12, 100, 12);
 	color: white;
 	border-radius: 0.3em;
+	width: 97px;
 }
 
 .btn-Cpunto{
@@ -259,8 +283,10 @@ body{
 
 .input-info{
 	border-radius: 0.3em;
-}
+    color:black;
+	font-family: 'Trocchi', serif;
 
+}
 /* aqui se lista los colores de la paleta  */
 /* primera fila */
 #color1{
@@ -306,6 +332,51 @@ body{
 #color15{
 	background-color: var(--clrWhite);
 }
+#color16{
+	background-color: var(--clrFireBrick);
+}
+#color17{
+	background-color: var(--clrIndianRed);
+}
+#color18{
+	background-color: var(--clrPaleVioletRed);
+}
+#color19{
+	background-color: var(--clrTomato);
+}
+#color20{
+	background-color: var(--clrPaleGoldenrod);
+}
+#color21{
+	background-color: var(--clrDarkKhaki);
+}
+#color22{
+	background-color: var(--clrDarkSlateBlue);
+}
+#color23{
+	background-color: var(--clrMediumPurple);
+}
+#color24{
+	background-color: var(--clrSpringGreen);
+}
+
+#color25{
+	background-color: var(--clrOlive);
+}
+
+#color26{
+	background-color: var(--clrLightSeaGreen);
+}
+
+#color27{
+	background-color: var(--clrAquamarine);
+}
+#color28{
+	background-color: var(--clrRosyBrown);
+}
+
+
+
 
 /* campo de la vista del color selecionado */
 
