@@ -264,14 +264,14 @@ body{
 	background-color:  rgb(53, 129, 228);
 	color: white;
 	border-radius: 0.3em;
-	width: 97px;
+	width: 90px;
 }
 
 .btn-guardar{
 	background-color:  rgb(12, 100, 12);
 	color: white;
 	border-radius: 0.3em;
-	width: 97px;
+	width: 90px;
 }
 
 .btn-Cpunto{
@@ -286,6 +286,12 @@ body{
     color:black;
 	width: 195px;
 }
+
+
+.cont-btn{
+    padding: 5px;
+}
+
 /* aqui se lista los colores de la paleta  */
 /* primera fila */
 #color1{
