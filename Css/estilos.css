@@ -284,8 +284,7 @@ body{
 .input-info{
 	border-radius: 0.3em;
     color:black;
-	font-family: 'Trocchi', serif;
-
+	width: 195px;
 }
 /* aqui se lista los colores de la paleta  */
 /* primera fila */

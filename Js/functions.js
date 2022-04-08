@@ -62,6 +62,7 @@ btnGuardar.addEventListener("click", () => {
     var DatoDos = datoSecundario;
     datos(DatoUno, DatoDos);
    verr()
+   colortext()
 
 
 });
@@ -76,15 +77,25 @@ export function desabilitarcampos(){
   document.querySelector("#datofijo1").disabled = true;
   document.querySelector("#datofijo2").disabled = true;
   document.querySelector("#lati").disabled = true;
+  document.querySelector("#lati").style.color = "#FFFFFF";
   document.querySelector("#longt").disabled = true;
+  document.querySelector("#longt").style.color = "#FFFFFF";
   document.querySelector("#nombre").disabled = true;
+  document.querySelector("#nombre").style.color = "#FFFFFF";
   document.querySelector("#dirrecion").disabled = true;
+  document.querySelector("#dirrecion").style.color = "#FFFFFF";
   document.querySelector("#description").disabled = true;
+  document.querySelector("#description").style.color = "#FFFFFF";
   document.querySelector("#dato1").disabled = true;
+  document.querySelector("#dato1").style.color = "#FFFFFF";
   document.querySelector("#dato2").disabled = true;
+  document.querySelector("#dato2").style.color = "#FFFFFF";
   document.querySelector("#dato3").disabled = true;
+  document.querySelector("#dato3").style.color = "#FFFFFF";
   document.querySelector("#dato4").disabled = true;
+  document.querySelector("#dato4").style.color = "#FFFFFF";
   document.querySelector("#dato5").disabled = true;
+  document.querySelector("#dato5").style.color = "#FFFFFF";
 
   
 };
@@ -109,3 +120,19 @@ function verr(){
   document.querySelector("#datofijo2").disabled = true;
   
 };
+
+function colortext(){
+ 
+  document.querySelector("#lati").style.color = "#FFFFFF";
+  document.querySelector("#longt").style.color = "#FFFFFF";
+  document.querySelector("#nombre").style.color = "#FFFFFF";
+  document.querySelector("#dirrecion").style.color = "#FFFFFF";
+  document.querySelector("#description").style.color = "#FFFFFF";
+  document.querySelector("#dato1").style.color = "#FFFFFF";
+  document.querySelector("#dato2").style.color = "#FFFFFF";
+  document.querySelector("#dato3").style.color = "#FFFFFF";
+  document.querySelector("#dato4").style.color = "#FFFFFF";
+  document.querySelector("#dato5").style.color = "#FFFFFF";
+}
+
+
