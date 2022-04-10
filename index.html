@@ -38,26 +38,18 @@
       </div>
 
       <!-- contenedor de la busqueda maxiva -->
-      <div class="container-markers">
-        <h4>Cargar Puntos</h4>
-        <form action="">
+      <div class="container-archivo">
+        <h4 class="titlebusqueda">Cargar Puntos</h4>
           <input class="input-archivo" type="text" id="nomArchivo" placeholder="Archivo">
           <input class="file" type="file" id="file" />
-          <input type="button" value="Subir Archivo" class="btn-archivo"
+          <div class="btn-file">
+            <input type="button" value="Subir Archivo" class="btn-archivo"
             onclick="document.getElementById('file').click()">
-
-
-          <div class="btn-Cpunto">
-
+            <button type="submit" class="btn-guardar" id="btnMasivo">Pintar</button>
           </div>
-
-        </form>
-        <button type="submit" class="btn-guardar" id="btnMasivo">Pintar</button>
       </div>
 
       <hr>
-      <h5>Herramientas</h5>
-
       <div id="campo_usuarios_correria" style="margin-bottom: 10px;display: none;">
         <table id="tabla">
           <thead>
@@ -120,7 +112,20 @@
           <img type="button" class="color" id="color25" />
           <img type="button" class="color" id="color26" />
           <img type="button" class="color" id="color27" />
-          <img type="button" class="color" id="color28" />=
+          <img type="button" class="color" id="color28" />
+          <img type="button" class="color" id="color29" />
+          <img type="button" class="color" id="color30" />
+          <img type="button" class="color" id="color31" />
+          <img type="button" class="color" id="color32" />
+          <img type="button" class="color" id="color33" />
+          <img type="button" class="color" id="color34" />
+          <img type="button" class="color" id="color35" />
+          <img type="button" class="color" id="color36" />
+          <img type="button" class="color" id="color37" />
+          <img type="button" class="color" id="color38" />
+          <img type="button" class="color" id="color39" />
+          <img type="button" class="color" id="color40" />
+          <img type="button" class="color" id="color41" />
 
         </div>
         <div class="colorView" id="colorView">
@@ -139,10 +144,17 @@
           </button>
             <button type="button" class="toolchildren" id="cuadroselect">
       </div>
-
+ 
       <div class="cont-title">
         <h4 class="cont-title">Información Punto</h4>
       </div>
+
+      <div class="btn-file">
+        <input class="input-contador" type="text" id="contadorarray">
+        <input class="input-contador" type="text" id="contadorselection">
+        <input class="input-contador" type="text" id="contadorrestante"> 
+      </div>
+
       <from>
         <div class="cont-datosfijos">
           <input class="input-info" type="text" id="datofijo1" placeholder="Dato Primario">
@@ -152,7 +164,7 @@
         <div class="cont-btn">
           <button type="submit" class="btn-editar" id="btn_editar"><img class="img" src="/img/lapiz.svg"
            alt=""></button>
-          <button type="submit" class="btn-guardar" id="btnguardar"><img class="img" src="/img/disquette.svg"
+          <button type="submit" class="btn-guardarPtu" id="btnguardar"><img class="img" src="/img/disquette.svg"
            alt=""></button>
         </div> 
 

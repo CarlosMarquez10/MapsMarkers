@@ -32,20 +32,21 @@
  --clrLightSeaGreen: LightSeaGreen;
  --clrAquamarine: Aquamarine;
  --clrRosyBrown: RosyBrown;
-
-
-
-
-
-
-
-
-
-
-  
-
-
+ --clrAzulUno: rgb(98, 146, 236);
+ --clrmora: rgb(83, 74, 95);
+ --clrverdeUno: rgb(171, 226, 140);
+ --clrAzulDos: rgb(10, 35, 82);
+ --clrAzultres: rgb(17, 84, 100);
+ --clrNaranjaUno: rgb(90, 57, 26);
+ --clrNaranjaDos: rgb(122, 90, 63);
+ --clrverdeDos: rgb(15, 37, 21);
+ --clrverdeTres: rgb(48, 70, 44);
+ --clrRojoUno: rgb(51, 13, 13);
+ --clrRojoDos: rgb(116, 26, 45);
+ --clrAmarilloUno: rgb(87, 105, 37);
+ --clrAmarilloDos: rgb(149, 190, 0);
 }
+
 body{
 	background-color:var(--ClrSecund);
 	font-family: 'Trocchi', serif;
@@ -121,10 +122,17 @@ body{
 .btn-archivo{
 	background-color: rgb(53, 129, 228);
     border-radius: 0.4em;
-	width:90%;
+	width:90px;
 	height:30px;
 	color: white;
 
+}
+.btn-guardar{
+	background-color: rgb(26, 78, 16);
+    border-radius: 0.4em;
+	width:90px;
+	height:30px;
+	color: white;
 }
 .container-Marker hr{
 	margin-top: 20px;
@@ -172,7 +180,26 @@ body{
 }
 
 .input-archivo{
-	margin: 0.5em;
+	margin: .3em;
+	padding: .3em;
+	width: 190px;
+}
+.titlebusqueda{
+  margin: 0;
+  padding: 0;
+}
+
+.btn-file{
+	display: flex;
+	justify-content: center;
+	padding-bottom: .6em;
+}
+
+.input-contador{
+	margin: 0;
+	padding: 0;
+	width: 40px;
+	height: 25px;
 }
 
 /* Estilos del Panel del centro (mapa) */
@@ -265,6 +292,7 @@ body{
 	color: white;
 	border-radius: 0.3em;
 	width: 90px;
+	height: 25px;
 }
 
 .btn-guardar{
@@ -290,6 +318,20 @@ body{
 
 .cont-btn{
     padding: 5px;
+}
+
+.cont-title{
+	margin: 0;
+	padding: .2em;
+}
+
+.btn-guardarPtu{
+	background-color: rgb(26, 78, 16);
+    border-radius: 0.4em;
+	width:90px;
+	height:25px;
+	color: white;
+	margin-bottom: .5em;
 }
 
 /* aqui se lista los colores de la paleta  */
@@ -380,14 +422,60 @@ body{
 	background-color: var(--clrRosyBrown);
 }
 
+#color29{
+	background-color: var(--clrAzulUno);
+}
+
+#color30{
+	background-color: var(--clrmora);
+}
+
+#color31{
+	background-color: var(--clrverdeUno);
+}
+
+#color32{
+	background-color: var(--clrAzulDos);
+}
+
+#color33{
+	background-color: var(--clrAzultres);
+}
+
+#color34{
+	background-color: var(--clrNaranjaUno);
+}
+
+#color35{
+	background-color: var(--clrNaranjaDos);
+}
+
+#color36{
+	background-color: var(--clrverdeDos);
+}
+
+#color37{
+	background-color: var(--clrverdeTres);
+}
+
+#color38{
+	background-color: var(--clrRojoUno);
+}
+#color39{
+	background-color: var(--clrRojoDos);
+}
+
+#color40{
+	background-color: var(--clrAmarilloUno);
+}
+
+#color41{
+	background-color: var(--clrAmarilloDos);
+}
 
 
 
 /* campo de la vista del color selecionado */
-
-#color41{
-    background-color: white;
-}
 
 .tools{
 	display: flex;
