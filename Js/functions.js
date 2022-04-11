@@ -1,4 +1,4 @@
-import {btn_editar} from "./datos.js"
+import {btn_editar, mispuntos} from "./datos.js"
 
 export var fecha_actual = "";
 let btnGuardar = document.querySelector("#btnguardar");
@@ -135,4 +135,18 @@ function colortext(){
   document.querySelector("#dato5").style.color = "#FFFFFF";
 }
 
+// funsion para contar datos repetidos
 
+function ContarDato(){
+
+   for (let i = 0; i < mispuntos.length; i++) {
+
+     for (let j = j+1; j < mispuntos.length; j++) {
+         if(mispuntos[j] == mispuntos[1]){
+              
+         }
+     }
+     
+   }
+
+};
