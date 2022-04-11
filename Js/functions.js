@@ -1,4 +1,4 @@
-import {btn_editar, mispuntos} from "./datos.js"
+import {btn_editar,btnpuntos,mispuntos} from "./datos.js"
 
 export var fecha_actual = "";
 let btnGuardar = document.querySelector("#btnguardar");
@@ -108,6 +108,10 @@ export function Habilitarcampos(){
 
   document.querySelector("#datofijo1").disabled = false;
   document.querySelector("#datofijo2").disabled = false;
+  document.querySelector("#datofijo1").style.background = "#FFFFFF";
+  document.querySelector("#datofijo1").style.color = "#808080";
+  document.querySelector("#datofijo2").style.background = "#FFFFFF";
+  document.querySelector("#datofijo2").style.color = "#808080";
 };
 
 
@@ -136,17 +140,29 @@ function colortext(){
 }
 
 // funsion para contar datos repetidos
+const Datax = new Array();
 
-function ContarDato(){
+btnpuntos.addEventListener('click', () => {
+  
+  for (let i=0; i < mispuntos.length; i++) {
+    if(mispuntos[i].DtPri === mispuntos[i+1].DtPri){
+         console.log(mispuntos[i].DtPri);
+       Datax.push(mispuntos[i].DtPri);
+    }
+    
+   //  document.getElementById("textarea").innerHTML = Datax; 
+  }
+  ContarDato(Datax);
+});
 
-   for (let i = 0; i < mispuntos.length; i++) {
 
-     for (let j = j+1; j < mispuntos.length; j++) {
-         if(mispuntos[j] == mispuntos[1]){
-              
-         }
-     }
-     
-   }
 
+function ContarDato(data){
+  let element = "";
+  for (let i = 0; i < data.length; i++) {
+    element = data[i];
+  }
+  document.getElementById("textarea").innerHTML = element ; 
+    
 };
+

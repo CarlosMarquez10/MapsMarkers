@@ -44,6 +44,10 @@ export const btnBuscar = document.querySelector("#btn_consulta1");
 export const btnmostrar = document.querySelector("#select");
 export const btn_editar = document.querySelector("#btn_editar");
 export const btnguardar = document.querySelector("#btnguardar");
+export const btnpuntos = document.querySelector("#puntos");
+
+
+
 
 
 export var iconox = "";
