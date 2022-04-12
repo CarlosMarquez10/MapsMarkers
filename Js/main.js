@@ -8,6 +8,8 @@ desabilitarcampos();
 
 document.getElementById("file").addEventListener("change", readFile, false);
 
+let contador = 0;
+let contadormarcado = 0;
 
 
 // FUNCION PARA BUSCAR POR INDIVIDUAL
@@ -112,8 +114,12 @@ function pasardato(dato) {
       pintar(lat, long, Nombre, Direccion, Description, anexo1, anexo2, anexo3,anexo4, anexo5 );
       dameelcolor(anexo5);
       console.log(anexo5);
-    }
+    } 
   });
+  
+  contador = output[1].length;
+  datoscontador(contador,contadormarcado);
+  
 }
 
 function pintar(lati, longi, Nomb, _Direccion, _Description, _anexo1, _anexo2, _anexo3, _anexo4, _anexo5) {
@@ -131,6 +137,9 @@ function pintar(lati, longi, Nomb, _Direccion, _Description, _anexo1, _anexo2, _
       this.anexo5 = an5;
     }
   }
+
+  
+  
 
   var damepuntos = new Puntos(lati, longi, Nomb, _Direccion, _Description, _anexo1, _anexo2, _anexo3, _anexo4, _anexo5);
   var puntox = L.marker([damepuntos.lati, damepuntos.longi], { icon: colorico })
@@ -164,7 +173,7 @@ function pintar(lati, longi, Nomb, _Direccion, _Description, _anexo1, _anexo2, _
 
     pasarpunto(datosguardar);
   }
-
+  
 }  
 
 // funcion para pasar datosfijos individual
@@ -182,7 +191,8 @@ function pasarpunto(puntos) {
   } else {
     mispuntos.push(puntos);
   }
-
+  contadormarcado = mispuntos.length;
+  datoscontado(contadormarcado)
   mostrardatos(index);
 }
 
@@ -212,9 +222,9 @@ $btnExportar2.addEventListener("click", function () {
   fecha_hoy();
   var nombre_archivo = "Maps Markers - " + fecha_actual;
   let tableExport = new TableExport($tabla2, {
-    exportButtons: false, // No queremos botones
-    filename: nombre_archivo, //Nombre del archivo de Excel
-    sheetname: "Hoja 1", //Título de la hoja
+    exportButtons: false, 
+    filename: nombre_archivo, 
+    sheetname: "Hoja 1", 
   });
   let datos = tableExport.getExportData();
   let preferenciasDocumento = datos.tabla.xlsx;
@@ -227,9 +237,7 @@ $btnExportar2.addEventListener("click", function () {
     preferenciasDocumento.RTL,
     preferenciasDocumento.sheetname
   );
-  // document.getElementById("alerta_vista").style.display = "block";
-  // document.getElementById("alerta_vista").className = 'alerta_vista_success';
-  // document.getElementById("alerta_vista").innerHTML = "El archivo "+nombre_archivo+" se ha descargado correctamente!";
+
 });
 
 //CARGAR EN TABLA TODAS LAS CORRERIAS PARA EXPORTAR A EXCEL
@@ -267,3 +275,14 @@ function cargar_tabla_2() {
   }
   document.getElementById("tbody_tabla").innerHTML = aux;
 }
+
+
+function datoscontador(contador){
+
+  document.querySelector("#contadorarray").value = contador;
+  document.querySelector("#contadorselection").value = contadormarcado;
+}
+
+function datoscontado(contado){
+  document.querySelector("#contadorselection").value = contado;
+};

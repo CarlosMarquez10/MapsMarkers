@@ -200,6 +200,9 @@ body{
 	padding: 0;
 	width: 40px;
 	height: 25px;
+	text-align: center;
+	font-size: 1.2em;
+	color:blue;
 }
 
 /* Estilos del Panel del centro (mapa) */
