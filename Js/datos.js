@@ -45,10 +45,8 @@ export const btnmostrar = document.querySelector("#select");
 export const btn_editar = document.querySelector("#btn_editar");
 export const btnguardar = document.querySelector("#btnguardar");
 export const btnpuntos = document.querySelector("#puntos");
-
-
-
-
+export const btnNom = document.querySelector("#file");
+export const btnNomarchivo = document.querySelector("#btnNomarchivo");
 
 export var iconox = "";
 export var nomcolor = "";
@@ -57,7 +55,6 @@ export var nombreColor;
 export var Resultado = new Array();
 export var mispuntos = new Array();
 export var datosTextArea = new Array();
-
 
 export var iconoBlue = L.icon({
   iconUrl: "img/icoblue.svg",
@@ -200,10 +197,9 @@ export var icoRosyBrown = L.icon({
   iconSize: [30, 40],
 });
 
-
 // nuevos colores - dos
 
-export var icoAzulUno  = L.icon({
+export var icoAzulUno = L.icon({
   iconUrl: "img/icoAzulUno.svg",
   iconSize: [30, 40],
 });
@@ -267,8 +263,6 @@ export var icoAmarilloUno = L.icon({
   iconUrl: "img/icoAmarilloUno.svg",
   iconSize: [30, 40],
 });
-
-
 
 // a qui empieza la asignacion del codigo para el cuadro de color.
 
@@ -407,7 +401,6 @@ color20.addEventListener("click", () => {
   cambiarColor(iconox, nomcolor);
 });
 
-
 color21.addEventListener("click", () => {
   nomcolor = "DarkKhaki";
   colorview.id = "color21";
@@ -422,7 +415,6 @@ color22.addEventListener("click", () => {
   cambiarColor(iconox, nomcolor);
 });
 
-
 color23.addEventListener("click", () => {
   nomcolor = "MediumPurple";
   colorview.id = "color23";
@@ -430,14 +422,12 @@ color23.addEventListener("click", () => {
   cambiarColor(iconox, nomcolor);
 });
 
-
 color24.addEventListener("click", () => {
   nomcolor = "SpringGreen";
   colorview.id = "color24";
   iconox = icoSpringGreen;
   cambiarColor(iconox, nomcolor);
 });
-
 
 color25.addEventListener("click", () => {
   nomcolor = "Olive";
@@ -558,17 +548,47 @@ color41.addEventListener("click", () => {
   cambiarColor(iconox, nomcolor);
 });
 
-
-
+colorico = iconoBlue;
 
 function cambiarColor(color, nomcolor) {
   colorico = color;
   nombreColor = nomcolor;
   console.log(nombreColor);
-};
-
-
-
-
+}
 
 // cambiar el color de los puntos
+
+export function dameelcolor(colorx) {
+  var color = colorx;
+  switch (color) {
+    case (color = "Amarillo"):
+      colorico = iconoYellow;
+      break;
+    case (color = "Rojo"):
+      colorico = iconoRed;
+      break;
+    case (color = "Verde"):
+      colorico = iconogreen;
+      break;
+    case (color = "Azul"):
+      colorico = iconoBlue;
+      break;
+    case (color = "Rosado"):
+      colorico = iconomagenta;
+      break;
+    case (color = "Maron"):
+      colorico = icoNaranjaUno;
+      break;
+    case (color = "Naranja"):
+      colorico = iconoorange;
+      break;
+    case (color = "Gris"):
+      colorico = iconogrey;
+      break;
+    case (color = "Morado"):
+      colorico = icomora;
+      break;
+    default:
+      colorico = iconoBlue;  
+  }
+};

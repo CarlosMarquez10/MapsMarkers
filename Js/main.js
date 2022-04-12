@@ -1,4 +1,4 @@
-import {nombreColor,colorico,btnMasivo,btnBuscar,btnmostrar,mispuntos} from"./datos.js";
+import {nombreColor,colorico,btnMasivo,btnBuscar,btnmostrar,mispuntos, dameelcolor} from"./datos.js";
 import {fecha_hoy,fecha_actual,DtoPri,DtoSec,desabilitarcampos} from "./functions.js";
 
 let map = L.map("map").setView([8.03234, -72.901503], 8);
@@ -79,6 +79,8 @@ function readFile(evt) {
   reader.readAsBinaryString(file);
 }
 
+
+
 function pasardato(dato) {
   var output = new Array();
   output = dato;
@@ -108,6 +110,8 @@ function pasardato(dato) {
       var anexo4 = dato4[j];
       var anexo5 = dato5[j];
       pintar(lat, long, Nombre, Direccion, Description, anexo1, anexo2, anexo3,anexo4, anexo5 );
+      dameelcolor(anexo5);
+      console.log(anexo5);
     }
   });
 }
@@ -127,6 +131,7 @@ function pintar(lati, longi, Nomb, _Direccion, _Description, _anexo1, _anexo2, _
       this.anexo5 = an5;
     }
   }
+
   var damepuntos = new Puntos(lati, longi, Nomb, _Direccion, _Description, _anexo1, _anexo2, _anexo3, _anexo4, _anexo5);
   var puntox = L.marker([damepuntos.lati, damepuntos.longi], { icon: colorico })
     .addTo(map)

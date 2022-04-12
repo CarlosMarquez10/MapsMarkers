@@ -1,4 +1,4 @@
-import {btn_editar,btnpuntos,mispuntos} from "./datos.js"
+import {btn_editar,btnpuntos,mispuntos,btnNomarchivo,btnNom} from "./datos.js"
 
 export var fecha_actual = "";
 let btnGuardar = document.querySelector("#btnguardar");
@@ -165,4 +165,12 @@ function ContarDato(data){
   document.getElementById("textarea").innerHTML = element ; 
     
 };
+
+btnNom.addEventListener('change', () => {
+     let datanom = btnNom.files[0].name;
+    document.querySelector("#nomArchivo").value = datanom;
+    document.querySelector("#nomArchivo").style.background = "#94D393";
+    document.querySelector("#nomArchivo").disabled = true;
+    document.querySelector("#nomArchivo").style.color = "#076A05";
+});
 
