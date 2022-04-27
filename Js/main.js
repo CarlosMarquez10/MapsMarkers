@@ -99,6 +99,7 @@ function pasardato(dato) {
       var dato3 = output[7];
       var dato4 = output[8];
       var dato5 = output[9];
+      var dato6 = output[10];
     }
     for (var j = 0; j < latitud.length; j++) {
       var lat = latitud[j];
@@ -111,9 +112,9 @@ function pasardato(dato) {
       var anexo3 = dato3[j];
       var anexo4 = dato4[j];
       var anexo5 = dato5[j];
-      pintar(lat, long, Nombre, Direccion, Description, anexo1, anexo2, anexo3,anexo4, anexo5 );
-      dameelcolor(anexo5);
-      console.log(anexo5);
+      var anexo6 = dato6[j];
+      dameelcolor(anexo6);
+      pintar(lat, long, Nombre, Direccion, Description, anexo1, anexo2, anexo3,anexo4, anexo5, anexo6 );
     } 
   });
   
@@ -122,9 +123,9 @@ function pasardato(dato) {
   
 }
 
-function pintar(lati, longi, Nomb, _Direccion, _Description, _anexo1, _anexo2, _anexo3, _anexo4, _anexo5) {
+function pintar(lati, longi, Nomb, _Direccion, _Description, _anexo1, _anexo2, _anexo3, _anexo4, _anexo5, _anexo6) {
   class Puntos {
-    constructor(latit, longit, Nomb, Dire, Desc, an1, an2, an3, an4, an5) {
+    constructor(latit, longit, Nomb, Dire, Desc, an1, an2, an3, an4, an5, an6) {
       this.lati = latit;
       this.longi = longit;
       this.Nomb = Nomb;
@@ -135,13 +136,14 @@ function pintar(lati, longi, Nomb, _Direccion, _Description, _anexo1, _anexo2, _
       this.anexo3 = an3;
       this.anexo4 = an4;
       this.anexo5 = an5;
+      this.anexo6 = an6
     }
   }
 
   
   
 
-  var damepuntos = new Puntos(lati, longi, Nomb, _Direccion, _Description, _anexo1, _anexo2, _anexo3, _anexo4, _anexo5);
+  var damepuntos = new Puntos(lati, longi, Nomb, _Direccion, _Description, _anexo1, _anexo2, _anexo3, _anexo4, _anexo5, _anexo6);
   var puntox = L.marker([damepuntos.lati, damepuntos.longi], { icon: colorico })
     .addTo(map)
     .bindPopup(
