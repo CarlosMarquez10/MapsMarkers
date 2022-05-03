@@ -55,9 +55,12 @@ body{
 /* Estilos del contenedor principal */
 
 .main{
-	
+	min-width: 877px !important;
+	max-width: 1800px;
 	display: flex;
 	margin:1em;
+	align-content: center;
+
 	
 }
 /* estilos del lateral Izquierdo */
@@ -72,6 +75,7 @@ body{
 	width:25%;
 	border-top-left-radius: 8px;
 	border-bottom-left-radius: 8px;
+	/* overflow: auto; */
 }
 .side-left .sidebar-brand{
 	margin-top: 25px;
@@ -208,14 +212,16 @@ body{
 /* Estilos del Panel del centro (mapa) */
 #map{
 
-    width: 100%;
-    height: 600px;
+    width: 100%; 
+    height: 700px;
+
 
 }
 
 /* Estilos del lateral derecho */
 
 .side-right{
+	max-width: 700px;
 	display: flex;
 	flex-flow: column wrap;
 	/* justify-content: center; */
@@ -226,7 +232,7 @@ body{
 	width:25%;
 	border-top-right-radius: 8px;
 	border-bottom-right-radius: 8px;
-
+    /* overflow-x: scroll; */
 	
 }
 
@@ -241,6 +247,7 @@ body{
 	border-radius: 5px;
 	border:2px solid;
 	border-color:rgb(53, 129, 228);
+	overflow-y: auto;
 }
 
 .colores{
@@ -255,6 +262,7 @@ body{
 	width:80%;
 	height:99px;
 	border-radius:8px;
+	overflow-y: auto;
 }
 
 .colores .color{
@@ -490,6 +498,7 @@ body{
 	padding: 2px;
 	justify-content: space-evenly;
 	border-radius: 5px;
+	overflow: auto;
 
 	
 }
@@ -500,6 +509,8 @@ body{
 	background-color: rgb(53, 129, 228);
     width:15%;
 	height:17px;
+	overflow: hidden;
+	align-content: center;
 }
 
 .tools .img{
@@ -509,4 +520,8 @@ body{
 
 .svg1{
 	fill: green;
+}
+
+.container-Infodato{
+	overflow-y: auto;
 }
