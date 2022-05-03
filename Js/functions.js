@@ -65,6 +65,7 @@ btnGuardar.addEventListener("click", () => {
    colortext()
 
 
+
 });
 
 function datos(dato1, dato2){
@@ -96,7 +97,12 @@ export function desabilitarcampos(){
   document.querySelector("#dato4").style.color = "#FFFFFF";
   document.querySelector("#dato5").disabled = true;
   document.querySelector("#dato5").style.color = "#FFFFFF";
-
+  document.querySelector("#contadorarray").disabled = true;
+  document.querySelector("#contadorarray").style.color = "#F00";
+  document.querySelector("#contadorselection").disabled = true;
+  document.querySelector("#contadorselection").style.color = "#F00";
+  document.querySelector("#contadorrestante").disabled = true;
+  document.querySelector("#contadorrestante").style.color = "#F00";
   
 };
 

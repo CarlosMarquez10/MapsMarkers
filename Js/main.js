@@ -10,6 +10,9 @@ document.getElementById("file").addEventListener("change", readFile, false);
 
 let contador = 0;
 let contadormarcado = 0;
+let contar =0;
+let contadox = 0;
+let descontar = 0;
 
 
 // FUNCION PARA BUSCAR POR INDIVIDUAL
@@ -22,7 +25,7 @@ btnBuscar.addEventListener("click", () => {
     constructor(lat, long) {
       this.lat = lat;
       this.long = long;
-    }
+    } 
   }
   var damepuntos = new Puntos(latitud, longitud);
   console.log(damepuntos.lat);
@@ -81,6 +84,9 @@ function readFile(evt) {
   reader.readAsBinaryString(file);
 }
 
+// btnGuardar.addEventListener("click", () => {
+//   contar = 0;
+// });
 
 
 function pasardato(dato) {
@@ -119,8 +125,8 @@ function pasardato(dato) {
   });
   
   contador = output[1].length;
-  datoscontador(contador,contadormarcado);
-  
+  descontar = contador;
+  document.querySelector("#contadorarray").value = contador;
 }
 
 function pintar(lati, longi, Nomb, _Direccion, _Description, _anexo1, _anexo2, _anexo3, _anexo4, _anexo5, _anexo6) {
@@ -144,7 +150,7 @@ function pintar(lati, longi, Nomb, _Direccion, _Description, _anexo1, _anexo2, _
   
 
   var damepuntos = new Puntos(lati, longi, Nomb, _Direccion, _Description, _anexo1, _anexo2, _anexo3, _anexo4, _anexo5, _anexo6);
-  var puntox = L.marker([damepuntos.lati, damepuntos.longi], { icon: colorico })
+  var puntox = L.marker([damepuntos.lati,damepuntos.longi], { icon: colorico })
     .addTo(map)
     .bindPopup(
       `Orden: ${damepuntos.anexo1}`
@@ -183,23 +189,27 @@ function pintar(lati, longi, Nomb, _Direccion, _Description, _anexo1, _anexo2, _
 function pasarpunto(puntos) {
   var datoN = "";
   var index = 0;
+  
   if (mispuntos.length === 0) {
     mispuntos.push(puntos);
+    ++contar;
   }
   datoN = puntos.nombre;
   index = mispuntos.findIndex((mipunto) => mipunto.nombre === datoN);
   if (index > -1) {
     mispuntos.splice(index, 1, puntos);
+   
   } else {
     mispuntos.push(puntos);
+    ++contar;
   }
   contadormarcado = mispuntos.length;
-  datoscontado(contadormarcado)
+  datoscontado(contadormarcado,contar)
   mostrardatos(index);
+  
 }
 
 btnmostrar.addEventListener("click", () => {
-  console.log(mispuntos);
 });
 
 function mostrardatos(index) {
@@ -278,13 +288,16 @@ function cargar_tabla_2() {
   document.getElementById("tbody_tabla").innerHTML = aux;
 }
 
+function datoscontado(contado,contar){
+  contadox =  descontar - contado;
+  datoscontador(contadox)
+  document.querySelector("#contadorselection").value = contado;
+  document.querySelector("#contadorrestante").value = contar;
+};
 
-function datoscontador(contador){
-
-  document.querySelector("#contadorarray").value = contador;
-  document.querySelector("#contadorselection").value = contadormarcado;
+function datoscontador(contadox){
+  
+  document.querySelector("#contadorarray").value = contadox;
+  
 }
 
-function datoscontado(contado){
-  document.querySelector("#contadorselection").value = contado;
-};
