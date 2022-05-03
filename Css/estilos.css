@@ -59,7 +59,7 @@ body{
 	max-width: 1800px;
 	display: flex;
 	margin:1em;
-	align-content: center;
+	justify-content:center;
 
 	
 }
@@ -188,6 +188,7 @@ body{
 	margin: .3em;
 	padding: .3em;
 	width: 190px;
+	border-radius: 3px;
 }
 .titlebusqueda{
   margin: 0;
