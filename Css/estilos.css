@@ -65,9 +65,10 @@ body{
 }
 /* estilos del lateral Izquierdo */
 .side-left{
+	max-width: 550px;
+	min-width: 230px;
 	display: flex;
 	flex-flow: column wrap;
-	/* justify-content: center; */
 	align-items: center;
 	background-color: var(--ClrPrimary);
 	color: var(--Clrfont);
@@ -75,7 +76,7 @@ body{
 	width:25%;
 	border-top-left-radius: 8px;
 	border-bottom-left-radius: 8px;
-	/* overflow: auto; */
+
 }
 .side-left .sidebar-brand{
 	margin-top: 25px;
@@ -221,10 +222,10 @@ body{
 /* Estilos del lateral derecho */
 
 .side-right{
-	max-width: 700px;
+	max-width: 600px;
+	min-width: 220px;
 	display: flex;
 	flex-flow: column wrap;
-	/* justify-content: center; */
 	align-items: center;
 	background-color: var(--ClrPrimary);
 	color: var(--Clrfont);
@@ -232,7 +233,7 @@ body{
 	width:25%;
 	border-top-right-radius: 8px;
 	border-bottom-right-radius: 8px;
-    /* overflow-x: scroll; */
+
 	
 }
 
